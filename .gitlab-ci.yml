@@ -11,10 +11,15 @@ image: maven:3.5.0-jdk-8
 build:
   stage: build
   script:
-    - "mvn clean compile"
+    - "mvn $MAVEN_CLI_OPTS clean compile"
     
 test:
   stage: test
   script:
-    - "mvn test"
+    - "mvn $MAVEN_CLI_OPTS test"
+    
+deploy:
+  stage: deploy
+  script:
+    - "mvn $MAVEN_CLI_OPTS deploy"
 
