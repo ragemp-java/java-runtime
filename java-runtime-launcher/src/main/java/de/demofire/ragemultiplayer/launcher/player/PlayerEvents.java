@@ -24,6 +24,7 @@ public class PlayerEvents {
 
     static void onPlayerChat(int playerId, String text) {
         System.out.println("incoming onPlayerChat:" + playerId + " " + text);
+        PlayerNative.outputChatBox(playerId, text);
     }
 
     static void onPlayerEnterVehicle(int playerId, int vehicleId, int seatId) {
