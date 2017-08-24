@@ -21,5 +21,6 @@ test:
 deploy:
   stage: deploy
   script:
+    - "echo ${maven_password}"
     - "mvn $MAVEN_CLI_OPTS deploy"
 
