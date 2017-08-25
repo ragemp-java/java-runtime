@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Noxaro
  */
 @Slf4j
-public class Main {
+public class Launcher {
 
     public static void main() {
         log.info("Initializing RageJava Launcher");

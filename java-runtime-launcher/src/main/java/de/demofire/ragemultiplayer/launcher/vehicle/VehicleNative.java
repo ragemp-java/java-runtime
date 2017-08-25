@@ -1,8 +1,9 @@
 package de.demofire.ragemultiplayer.launcher.vehicle;
 
+import de.demofire.ragemultiplayer.api.color.RGBColor;
+import de.demofire.ragemultiplayer.api.vector.Vector3;
+import de.demofire.ragemultiplayer.api.vehicle.VehiclePaintInfo;
 import de.demofire.ragemultiplayer.launcher.EntityNative;
-import de.demofire.ragemultiplayer.launcher.RGBColor;
-import de.demofire.ragemultiplayer.launcher.Vector3;
 
 import java.util.List;
 

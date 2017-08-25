@@ -1,8 +1,8 @@
 package de.demofire.ragemultiplayer.launcher.checkpoint;
 
+import de.demofire.ragemultiplayer.api.color.RGBColor;
+import de.demofire.ragemultiplayer.api.vector.Vector3;
 import de.demofire.ragemultiplayer.launcher.EntityNative;
-import de.demofire.ragemultiplayer.launcher.RGBColor;
-import de.demofire.ragemultiplayer.launcher.Vector3;
 
 /**
  * @author Noxaro

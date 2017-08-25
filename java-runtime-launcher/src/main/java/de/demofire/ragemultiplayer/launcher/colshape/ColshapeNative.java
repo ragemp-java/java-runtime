@@ -1,7 +1,7 @@
 package de.demofire.ragemultiplayer.launcher.colshape;
 
+import de.demofire.ragemultiplayer.api.vector.Vector3;
 import de.demofire.ragemultiplayer.launcher.EntityNative;
-import de.demofire.ragemultiplayer.launcher.Vector3;
 
 /**
  * @author Noxaro

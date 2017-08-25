@@ -1,9 +1,9 @@
-package de.demofire.ragemultiplayer.launcher;
+package de.demofire.ragemultiplayer.api.entity
 
 /**
  * @author Noxaro
  */
-public enum EntityType {
+enum class EntityType {
     Player,
     Vehicle,
     Object,

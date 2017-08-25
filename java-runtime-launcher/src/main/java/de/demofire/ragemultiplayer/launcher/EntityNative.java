@@ -1,5 +1,7 @@
 package de.demofire.ragemultiplayer.launcher;
 
+import de.demofire.ragemultiplayer.api.vector.Vector3;
+
 /**
  * @author Noxaro
  */

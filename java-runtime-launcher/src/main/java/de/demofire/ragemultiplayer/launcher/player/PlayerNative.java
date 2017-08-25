@@ -1,8 +1,10 @@
 package de.demofire.ragemultiplayer.launcher.player;
 
+import de.demofire.ragemultiplayer.api.player.PlayerClothes;
+import de.demofire.ragemultiplayer.api.player.PlayerHeadBlend;
+import de.demofire.ragemultiplayer.api.player.PlayerProperty;
+import de.demofire.ragemultiplayer.api.vector.Vector3;
 import de.demofire.ragemultiplayer.launcher.EntityNative;
-import de.demofire.ragemultiplayer.launcher.PropData;
-import de.demofire.ragemultiplayer.launcher.Vector3;
 
 /**
  * @author Noxaro
@@ -23,11 +25,11 @@ public class PlayerNative extends EntityNative {
     public static native void playScenario(int playerId, String scenario);
     public static native void stopAnimation(int playerId);
 
-    public static native PlayerCloth getClothes(int playerId, int componentNumber);
-    public static native void setClothes(int playerId, int componentNumber, PlayerCloth playerCloth);
+    public static native PlayerClothes getClothes(int playerId, int componentNumber);
+    public static native void setClothes(int playerId, int componentNumber, PlayerClothes playerCloth);
 
-    public static native PropData getProp(int playerId, int propId);
-    public static native void setProp(int playerId, int propId, PropData propData);
+    public static native PlayerProperty getProp(int playerId, int propId);
+    public static native void setProp(int playerId, int propId, PlayerProperty propData);
 
     public static native void eval(int playerId, String code);
 

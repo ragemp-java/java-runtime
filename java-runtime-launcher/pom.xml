@@ -12,6 +12,13 @@
     <artifactId>java-runtime-laucher</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>de.demofire.ragemultiplayer</groupId>
+            <artifactId>java-runtime-api</artifactId>
+			<version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -25,7 +32,6 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-
     </dependencies>
 
     <build>
