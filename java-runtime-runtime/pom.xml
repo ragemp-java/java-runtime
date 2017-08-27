@@ -11,20 +11,37 @@
 
     <artifactId>java-runtime-runtime</artifactId>
 
-    <dependencies>
+	<dependencies>
         <dependency>
             <groupId>de.demofire.ragemultiplayer</groupId>
             <artifactId>java-runtime-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-
+		<dependency>
+			<groupId>de.demofire.ragemultiplayer</groupId>
+			<artifactId>java-runtime-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
         <dependency>
             <groupId>de.demofire.ragemultiplayer</groupId>
             <artifactId>java-runtime-laucher</artifactId>
-            <version>${project.version}</version>
+			<version>${project.version}</version>
         </dependency>
+		<dependency>
+			<groupId>de.demofire.ragemultiplayer</groupId>
+			<artifactId>java-runtime-event</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
-    </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jetbrains.kotlin</groupId>
+				<artifactId>kotlin-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 
 </project>
