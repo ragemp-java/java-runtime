@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>java-runtime-parent</artifactId>
-        <groupId>de.demofire.ragemultiplayer</groupId>
+        <groupId>mp.rage.plugin.java</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,12 +14,12 @@
     <dependencies>
 
         <dependency>
-            <groupId>de.demofire.ragemultiplayer</groupId>
+            <groupId>mp.rage.plugin.java</groupId>
             <artifactId>java-runtime-api</artifactId>
 			<version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.demofire.ragemultiplayer</groupId>
+            <groupId>mp.rage.plugin.java</groupId>
             <artifactId>java-runtime-common</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -48,39 +48,39 @@
                 <configuration>
                     <javahIncludes>
                         <javahInclude>
-                            <className>de.demofire.ragemultiplayer.launcher.player.PlayerNative</className>
+                            <className>mp.rage.plugin.java.launcher.player.PlayerNative</className>
                             <headerName>PlayerNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>de.demofire.ragemultiplayer.launcher.EntityNative</className>
+                            <className>mp.rage.plugin.java.launcher.EntityNative</className>
                             <headerName>EntityNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>de.demofire.ragemultiplayer.launcher.blip.BlipNative</className>
+                            <className>mp.rage.plugin.java.launcher.blip.BlipNative</className>
                             <headerName>BlipNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>de.demofire.ragemultiplayer.launcher.checkpoint.CheckpointNative</className>
+                            <className>mp.rage.plugin.java.launcher.checkpoint.CheckpointNative</className>
                             <headerName>CheckpointNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>de.demofire.ragemultiplayer.launcher.colshape.ColshapeNative</className>
+                            <className>mp.rage.plugin.java.launcher.colshape.ColshapeNative</className>
                             <headerName>ColshapeNative.hpp</headerName>
                         </javahInclude>
 						<javahInclude>
-							<className>de.demofire.ragemultiplayer.launcher.marker.MarkerNative</className>
+							<className>mp.rage.plugin.java.launcher.marker.MarkerNative</className>
 							<headerName>MarkerNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>de.demofire.ragemultiplayer.launcher.object.ObjectNative</className>
+							<className>mp.rage.plugin.java.launcher.object.ObjectNative</className>
 							<headerName>ObjectNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>de.demofire.ragemultiplayer.launcher.pickup.PickupNative</className>
+							<className>mp.rage.plugin.java.launcher.pickup.PickupNative</className>
 							<headerName>PickupNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>de.demofire.ragemultiplayer.launcher.vehicle.VehicleNative</className>
+							<className>mp.rage.plugin.java.launcher.vehicle.VehicleNative</className>
 							<headerName>VehicleNative.hpp</headerName>
 						</javahInclude>
                     </javahIncludes>
