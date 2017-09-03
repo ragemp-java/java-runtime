@@ -9,7 +9,15 @@
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>java-runtime-event</artifactId>
+	<artifactId>java-runtime-event-simple</artifactId>
+
+	<properties>
+		<kotlin.version>1.1.4-3</kotlin.version>
+	</properties>
+
+	<dependencies>
+
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -19,5 +27,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

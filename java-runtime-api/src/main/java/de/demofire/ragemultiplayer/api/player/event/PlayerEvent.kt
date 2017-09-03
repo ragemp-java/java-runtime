@@ -1,6 +1,6 @@
 package de.demofire.ragemultiplayer.api.player.event
 
-import de.demofire.ragemultiplayer.event.GameEvent
+import de.demofire.ragemultiplayer.event.api.GameEvent
 
 /**
  * @author Noxaro

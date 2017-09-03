@@ -11,10 +11,11 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>java-runtime-launcher</module>
-        <module>java-runtime-event</module>
+        <module>java-runtime-event-api</module>
         <module>java-runtime-api</module>
         <module>java-runtime-common</module>
         <module>java-runtime-runtime</module>
+        <module>java-runtime-event-simple</module>
     </modules>
 
     <properties>

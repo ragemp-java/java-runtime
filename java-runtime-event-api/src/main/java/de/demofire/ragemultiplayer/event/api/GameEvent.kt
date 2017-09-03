@@ -1,4 +1,4 @@
-package de.demofire.ragemultiplayer.event
+package de.demofire.ragemultiplayer.event.api
 
 /**
  * @author Noxaro
