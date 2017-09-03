@@ -29,7 +29,7 @@
         </dependency>
 		<dependency>
 			<groupId>de.demofire.ragemultiplayer</groupId>
-			<artifactId>java-runtime-event</artifactId>
+			<artifactId>java-runtime-event-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
