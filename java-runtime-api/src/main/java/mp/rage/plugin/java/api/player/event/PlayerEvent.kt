@@ -5,5 +5,4 @@ import mp.rage.plugin.java.event.api.Event
 /**
  * @author Noxaro
  */
-interface PlayerEvent : Event {
-}
+abstract class PlayerEvent : Event()

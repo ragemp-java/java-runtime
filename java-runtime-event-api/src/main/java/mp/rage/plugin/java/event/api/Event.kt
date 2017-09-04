@@ -3,5 +3,14 @@ package mp.rage.plugin.java.event.api
 /**
  * @author Noxaro
  */
-interface Event {
+abstract class Event {
+    private var interrupted: Boolean = false;
+
+    fun isInterrupted(): Boolean {
+        return interrupted;
+    }
+
+    fun interrupt() {
+        interrupted = true;
+    }
 }

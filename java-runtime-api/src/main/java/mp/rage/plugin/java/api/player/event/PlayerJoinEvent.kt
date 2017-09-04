@@ -7,4 +7,4 @@ import mp.rage.plugin.java.api.player.Player
  */
 data class PlayerJoinEvent(
         val player: Player
-) : PlayerEvent
+) : PlayerEvent()

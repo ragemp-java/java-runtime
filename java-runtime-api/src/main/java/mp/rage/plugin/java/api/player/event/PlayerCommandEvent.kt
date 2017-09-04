@@ -8,4 +8,4 @@ import mp.rage.plugin.java.api.player.Player
 data class PlayerCommandEvent(
         val player: Player,
         val command: String
-) : PlayerEvent
+) : PlayerEvent()
