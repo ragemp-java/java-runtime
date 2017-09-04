@@ -5,7 +5,7 @@ import mp.rage.plugin.java.api.player.Player
 /**
  * @author Noxaro
  */
-interface ICommand {
+interface BasicCommand {
     fun beforeExecute(player: Player, arguments: Array<String>): Boolean {
         return true;
     }

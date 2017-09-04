@@ -5,5 +5,5 @@ package mp.rage.plugin.java.api.command
  */
 interface CommandHandler {
 
-    fun setCommandActive(command: ICommand, active: Boolean)
+    fun setCommandActive(command: BasicCommand, active: Boolean)
 }
