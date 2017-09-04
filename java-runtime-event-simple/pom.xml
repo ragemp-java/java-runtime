@@ -11,6 +11,14 @@
 
 	<artifactId>java-runtime-event-simple</artifactId>
 
+	<dependencies>
+		<dependency>
+			<groupId>mp.rage.plugin.java</groupId>
+			<artifactId>java-runtime-event-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>

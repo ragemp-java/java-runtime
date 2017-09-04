@@ -1,9 +1,9 @@
 package mp.rage.plugin.java.api.player.event
 
-import mp.rage.plugin.java.event.api.GameEvent
+import mp.rage.plugin.java.event.api.Event
 
 /**
  * @author Noxaro
  */
-interface PlayerEvent : GameEvent {
+interface PlayerEvent : Event {
 }
