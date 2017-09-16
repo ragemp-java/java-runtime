@@ -22,6 +22,38 @@
         <kotlin.version>1.1.4</kotlin.version>
     </properties>
 
+    <developers>
+        <developer>
+            <id>Noxaro</id>
+            <name>Fabian Jungwirth</name>
+            <url>https://github.com/Noxaro</url>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>RageMP-Java</name>
+        <url>https://github.com/ragemp-java</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/ragemp-java/java-runtime/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/ragemp-java/java-runtime.git</connection>
+        <developerConnection>scm:git:https://github.com/ragemp-java/java-runtime.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/ragemp-java/java-runtime</url>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
