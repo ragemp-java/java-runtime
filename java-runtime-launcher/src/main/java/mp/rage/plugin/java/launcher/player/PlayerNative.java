@@ -19,7 +19,7 @@ public class PlayerNative extends EntityNative {
 
     public static native void notify(int playerId, String message);
 
-    public static native void spawn(int playerId, Vector3 position, float heading);
+    public static native void spawn(int playerId, float x, float y, float z, float heading);
 
     public static native void playAnimation(int playerId, String dist, String name, float speed, int flags);
     public static native void playScenario(int playerId, String scenario);
