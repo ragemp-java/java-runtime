@@ -14,10 +14,28 @@ import mp.rage.plugin.java.api.player.PlayerClothes;
 import mp.rage.plugin.java.api.player.PlayerHeadBlend;
 import mp.rage.plugin.java.api.player.PlayerProperty;
 import mp.rage.plugin.java.api.vector.Vector3;
-import mp.rage.plugin.java.launcher.EntityNative;
 
-public class PlayerNative extends EntityNative {
+public class PlayerNative {
+    // Entity Native
+    public static native int getType(int id);
 
+    public static native void destroy(int id);
+
+    public static native int getDimension(int id);
+    public static native void setDimension(int id, int dimensionId);
+
+    public static native Vector3 getRotation(int playerId);
+    public static native void setRotation(int playerId, float x, float y, float z);
+
+    public static native int getModel(int playerId);
+    public static native void setModel(int playerId, int modelId);
+
+    public static native Vector3 getVelocity(int playerId);
+
+    public static native int getAlpha(int playerId);
+    public static native void setAlpha(int playerId, int alpha);
+
+    // Player Native
     public static native void kick(int playerId, String reason);
 
     public static native void ban(int playerId, String reason);
@@ -28,7 +46,7 @@ public class PlayerNative extends EntityNative {
 
     public static native void spawn(int playerId, float x, float y, float z, float heading);
 
-    public static native void playAnimation(int playerId, String dist, String name, float speed, int flags);
+    public static native void playAnimation(int playerId, String dict, String name, float speed, int flags);
     public static native void playScenario(int playerId, String scenario);
     public static native void stopAnimation(int playerId);
 

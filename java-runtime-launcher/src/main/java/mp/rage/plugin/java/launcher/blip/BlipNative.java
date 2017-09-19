@@ -10,9 +10,29 @@
 
 package mp.rage.plugin.java.launcher.blip;
 
-import mp.rage.plugin.java.launcher.EntityNative;
+import mp.rage.plugin.java.api.vector.Vector3;
 
-public class BlipNative extends EntityNative {
+public class BlipNative {
+    // Entity Native
+    public static native int getType(int id);
+
+    public static native void destroy(int id);
+
+    public static native int getDimension(int id);
+    public static native void setDimension(int id, int dimensionId);
+
+    public static native Vector3 getRotation(int playerId);
+    public static native void setRotation(int playerId, float x, float y, float z);
+
+    public static native int getModel(int playerId);
+    public static native void setModel(int playerId, int modelId);
+
+    public static native Vector3 getVelocity(int playerId);
+
+    public static native int getAlpha(int playerId);
+    public static native void setAlpha(int playerId, int alpha);
+
+    // Blip Native
     public static native float GetRadius(int blipId);
 
     public static native int GetMode(int blipId);

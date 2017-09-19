@@ -39,6 +39,14 @@ public class PlayerEvents {
             System.out.println(PlayerNative.getArmor(playerId));
         } else if (command.equalsIgnoreCase("setarmor")) {
             PlayerNative.setArmor(playerId, 50);
+        } else if (command.equalsIgnoreCase("destroy")) {
+            PlayerNative.destroy(playerId);
+        } else if (command.equalsIgnoreCase("getclothes")) {
+            try {
+                PlayerNative.getClothes(playerId, 0);
+            } catch (Exception e) {
+                System.out.println("exception catched" + e);
+            }
         }
     }
 

@@ -13,11 +13,30 @@ package mp.rage.plugin.java.launcher.vehicle;
 import mp.rage.plugin.java.api.color.RGBColor;
 import mp.rage.plugin.java.api.vector.Vector3;
 import mp.rage.plugin.java.api.vehicle.VehiclePaintInfo;
-import mp.rage.plugin.java.launcher.EntityNative;
 
 import java.util.List;
 
-public class VehicleNative extends EntityNative {
+public class VehicleNative {
+    // Entity Native
+    public static native int getType(int id);
+
+    public static native void destroy(int id);
+
+    public static native int getDimension(int id);
+    public static native void setDimension(int id, int dimensionId);
+
+    public static native Vector3 getRotation(int playerId);
+    public static native void setRotation(int playerId, float x, float y, float z);
+
+    public static native int getModel(int playerId);
+    public static native void setModel(int playerId, int modelId);
+
+    public static native Vector3 getVelocity(int playerId);
+
+    public static native int getAlpha(int playerId);
+    public static native void setAlpha(int playerId, int alpha);
+
+    // Vehicle Native
     public static native boolean IsSirenActive(int vehicleId);
     public static native boolean IsHornActive(int vehicleId);
     public static native boolean AreHighbeamsActive(int vehicleId);

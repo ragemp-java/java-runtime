@@ -12,9 +12,28 @@ package mp.rage.plugin.java.launcher.checkpoint;
 
 import mp.rage.plugin.java.api.color.RGBColor;
 import mp.rage.plugin.java.api.vector.Vector3;
-import mp.rage.plugin.java.launcher.EntityNative;
 
-public class CheckpointNative extends EntityNative {
+public class CheckpointNative {
+    // Entity Native
+    public static native int getType(int id);
+
+    public static native void destroy(int id);
+
+    public static native int getDimension(int id);
+    public static native void setDimension(int id, int dimensionId);
+
+    public static native Vector3 getRotation(int playerId);
+    public static native void setRotation(int playerId, float x, float y, float z);
+
+    public static native int getModel(int playerId);
+    public static native void setModel(int playerId, int modelId);
+
+    public static native Vector3 getVelocity(int playerId);
+
+    public static native int getAlpha(int playerId);
+    public static native void setAlpha(int playerId, int alpha);
+
+    // Checkpoint Native
     public static native RGBColor GetColour(int checkpointId);
     public static native void SetColour(int checkpointId, int r, int g, int b, int a);
 
