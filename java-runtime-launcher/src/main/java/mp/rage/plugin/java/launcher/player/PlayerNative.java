@@ -24,6 +24,9 @@ public class PlayerNative {
     public static native int getDimension(int id);
     public static native void setDimension(int id, int dimensionId);
 
+    public static native Vector3 getPosition(int playerId);
+    public static native void setPosition(int playerId, float x, float y, float z);
+
     public static native Vector3 getRotation(int playerId);
     public static native void setRotation(int playerId, float x, float y, float z);
 
@@ -94,8 +97,8 @@ public class PlayerNative {
 
     public static native String getActionString(int playerId);
 
-//    public static native getVehicle(int playerId);
-//    public static native void putIntoVehicle()
+    public static native int getVehicle(int playerId);
+    public static native void putIntoVehicle(int playerId, int vehicleId , int seatId);
     public static native void removeFromVehicle(int playerId);
     public static native int getSeat(int playerId);
 

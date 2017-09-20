@@ -37,6 +37,8 @@ public class VehicleNative {
     public static native void setAlpha(int playerId, int alpha);
 
     // Vehicle Native
+    public static native int create(int model, float x, float y, float z, float heading, int dimension);
+
     public static native boolean IsSirenActive(int vehicleId);
     public static native boolean IsHornActive(int vehicleId);
     public static native boolean AreHighbeamsActive(int vehicleId);
