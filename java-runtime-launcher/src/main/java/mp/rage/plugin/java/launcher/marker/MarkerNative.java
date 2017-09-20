@@ -15,23 +15,26 @@ import mp.rage.plugin.java.api.vector.Vector3;
 
 public class MarkerNative {
     // Entity Native
-    public static native int getType(int id);
+    public static native int getType(int markerId);
 
-    public static native void destroy(int id);
+    public static native void destroy(int markerId);
 
-    public static native int getDimension(int id);
-    public static native void setDimension(int id, int dimensionId);
+    public static native int getDimension(int markerId);
+    public static native void setDimension(int markerId, int dimensionId);
 
-    public static native Vector3 getRotation(int playerId);
-    public static native void setRotation(int playerId, float x, float y, float z);
+    public static native Vector3 getPosition(int markerId);
+    public static native void setPosition(int markerId, float x, float y, float z);
 
-    public static native int getModel(int playerId);
-    public static native void setModel(int playerId, int modelId);
+    public static native Vector3 getRotation(int markerId);
+    public static native void setRotation(int markerId, float x, float y, float z);
 
-    public static native Vector3 getVelocity(int playerId);
+    public static native int getModel(int markerId);
+    public static native void setModel(int markerId, int modelId);
 
-    public static native int getAlpha(int playerId);
-    public static native void setAlpha(int playerId, int alpha);
+    public static native Vector3 getVelocity(int markerId);
+
+    public static native int getAlpha(int markerId);
+    public static native void setAlpha(int markerId, int alpha);
 
     // Marker Native
     public static native RGBColor GetColour(int markerId);

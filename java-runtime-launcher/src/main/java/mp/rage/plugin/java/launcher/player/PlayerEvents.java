@@ -11,6 +11,7 @@
 package mp.rage.plugin.java.launcher.player;
 
 import mp.rage.plugin.java.api.vector.Vector3;
+import mp.rage.plugin.java.launcher.vehicle.VehicleNative;
 
 @SuppressWarnings("unused")
 public class PlayerEvents {
@@ -47,6 +48,14 @@ public class PlayerEvents {
             } catch (Exception e) {
                 System.out.println("exception catched" + e);
             }
+        } else if(command.equalsIgnoreCase("vehicle")) {
+            Vector3 position = PlayerNative.getPosition(playerId);
+            VehicleNative.create(418536135, position.getX() + 2, position.getY(), position.getZ(), 0F, 0);
+        } else if(command.equalsIgnoreCase("getvehicle")) {
+            int vehicle = PlayerNative.getVehicle(playerId);
+            PlayerNative.outputChatBox(playerId, String.valueOf(vehicle));
+        } else if(command.equalsIgnoreCase("putvehicle")) {
+            PlayerNative.putIntoVehicle(playerId, 0, 0);
         }
     }
 

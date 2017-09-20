@@ -25,16 +25,19 @@ public class VehicleNative {
     public static native int getDimension(int id);
     public static native void setDimension(int id, int dimensionId);
 
-    public static native Vector3 getRotation(int playerId);
-    public static native void setRotation(int playerId, float x, float y, float z);
+    public static native Vector3 getPosition(int vehicleId);
+    public static native void setPosition(int vehicleId, float x, float y, float z);
 
-    public static native int getModel(int playerId);
-    public static native void setModel(int playerId, int modelId);
+    public static native Vector3 getRotation(int vehicleId);
+    public static native void setRotation(int vehicleId, float x, float y, float z);
 
-    public static native Vector3 getVelocity(int playerId);
+    public static native int getModel(int vehicleId);
+    public static native void setModel(int vehicleId, int modelId);
 
-    public static native int getAlpha(int playerId);
-    public static native void setAlpha(int playerId, int alpha);
+    public static native Vector3 getVelocity(int vehicleId);
+
+    public static native int getAlpha(int vehicleId);
+    public static native void setAlpha(int vehicleId, int alpha);
 
     // Vehicle Native
     public static native int create(int model, float x, float y, float z, float heading, int dimension);
