@@ -10,4 +10,4 @@
 
 package mp.rage.plugin.java.api.exception
 
-class PlayerNotFoundException() : RageJavaException("")
+class PlayerNotFoundException(playerId: Int) : RageJavaException(playerId.toString())
