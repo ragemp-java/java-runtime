@@ -10,9 +10,11 @@
 
 package mp.rage.plugin.java.api.player
 
+import mp.rage.plugin.java.api.entity.Entity
 import mp.rage.plugin.java.api.vector.Vector3
+import mp.rage.plugin.java.api.vehicle.Vehicle
 
-interface Player {
+interface Player : Entity {
     fun kick(reason: String)
 
     fun ban(reason: String)
@@ -71,8 +73,8 @@ interface Player {
 
     fun getActionString(): String
 
-    //    public static native getVehicle(int playerId);
-    //    public static native void putIntoVehicle()
+    fun getVehicle(): Vehicle;
+    fun putIntoVehicle(vehicle: Vehicle, seatId: Int);
     fun removeFromVehicle()
 
     fun getSeat(): Int
