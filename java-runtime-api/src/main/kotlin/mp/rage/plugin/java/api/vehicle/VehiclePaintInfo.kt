@@ -11,6 +11,6 @@
 package mp.rage.plugin.java.api.vehicle
 
 data class VehiclePaintInfo(
-        val type: Number,
-        val color: Number
+        val type: Int,
+        val color: Int
 )

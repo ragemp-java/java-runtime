@@ -8,10 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.plugin.java.api.color
+package mp.rage.plugin.java.api.vector
 
-data class RGBColor(
-        val red: Int,
-        val green: Int,
-        val blue: Int
-)
+enum class MaterialType {
+    Color,
+    RGB,
+    Paint
+}

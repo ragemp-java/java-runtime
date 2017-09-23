@@ -118,7 +118,7 @@ public class PlayerNative {
 
     public static native int getWeapon(int playerId);
     public static native void giveWeapon(int playerId, int hash, int ammo);
-//    public static native void giveWeapons()
+    public static native void giveWeapons(int playerId, int[] weaponHashes, int[] ammo);
 
     public static native String getSerial(int playerId);
 }

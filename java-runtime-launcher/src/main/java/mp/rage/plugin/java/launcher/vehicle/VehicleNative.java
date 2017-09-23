@@ -42,13 +42,13 @@ public class VehicleNative {
     // Vehicle Native
     public static native int create(int model, float x, float y, float z, float heading, int dimension);
 
-    public static native boolean IsSirenActive(int vehicleId);
-    public static native boolean IsHornActive(int vehicleId);
-    public static native boolean AreHighbeamsActive(int vehicleId);
-    public static native boolean AreLightsActive(int vehicleId);
-    public static native boolean IsEngineActive(int vehicleId);
-    public static native boolean IsRocketBoostActive(int vehicleId);
-    public static native boolean IsBrakeActive(int vehicleId);
+    public static native boolean isSirenActive(int vehicleId);
+    public static native boolean isHornActive(int vehicleId);
+    public static native boolean areHighbeamsActive(int vehicleId);
+    public static native boolean ireLightsActive(int vehicleId);
+    public static native boolean isEngineActive(int vehicleId);
+    public static native boolean isRocketBoostActive(int vehicleId);
+    public static native boolean isBrakeActive(int vehicleId);
     public static native float getSteerAngle(int vehicleId);
     public static native float getGasPedalState(int vehicleId);
     public static native float getEngineHealth(int vehicleId);
@@ -64,7 +64,7 @@ public class VehicleNative {
     public static native boolean isDead(int vehicleId);
 
     public static native void explode(int vehicleId);
-    public static native void spawn(int vehicleId, Vector3 position, float heading);
+    public static native void spawn(int vehicleId, float x, float y, float z, float heading);
 
     public static native int getMod(int vehicleId, int id);
     public static native void setMod(int vehicleId, int id, int mod);
@@ -73,20 +73,20 @@ public class VehicleNative {
     public static native void enableNeons(int vehicleId, boolean toggle);
 
     public static native void setNeonsColour(int vehicleId, int r, int g, int b);
-    public static native RGBColor GetNeonsColour(int vehicleId);
+    public static native RGBColor getNeonsColour(int vehicleId);
 
-    public static native void Repair(int vehicleId);
+    public static native void repair(int vehicleId);
 
-    public static native RGBColor GetColourRGB(int vehicleId, int id);
-    public static native int GetColour(int vehicleId, int id);
-    public static native int GetPaint(int vehicleId, int id);
+    public static native RGBColor getColourRGB(int vehicleId, int id);
+    public static native int getColour(int vehicleId, int id);
+    public static native int getPaint(int vehicleId, int id);
 
-    public static native void SetColourRGB(int vehicleId, RGBColor primary, RGBColor secondary);
-    public static native void SetColour(int vehicleId, int primary, int secondary);
-    public static native void SetPaint(int vehicleId, VehiclePaintInfo primary, VehiclePaintInfo secondary);
+    public static native void setColourRGB(int vehicleId, int primaryRed, int primaryGreen, int primaryBlue, int secondaryRed, int secondaryGreen, int secondaryBlue);
+    public static native void setColour(int vehicleId, int primary, int secondary);
+    public static native void setPaint(int vehicleId, int primaryType, int primaryColor, int secondaryType, int secondaryColor);
 
-    public static native int GetMaterialType(int vehicleId);
+    public static native int getMaterialType(int vehicleId);
 
-    public static native String GetNumberPlate(int vehicleId);
-    public static native void SetNumberPlate(int vehicleId, String numberPlate);
+    public static native String getNumberPlate(int vehicleId);
+    public static native void setNumberPlate(int vehicleId, String numberPlate);
 }
