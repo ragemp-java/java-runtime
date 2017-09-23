@@ -37,6 +37,8 @@ public class CheckpointNative {
     public static native void setAlpha(int checkpointId, int alpha);
 
     // Checkpoint Native
+    public static native int create(int type, float x, float y, float z, float nextX, float nextY, float nextZ, float radius, int red, int green, int blue, int alpha, boolean visible, int dimension);
+
     public static native RGBColor GetColour(int checkpointId);
     public static native void SetColour(int checkpointId, int r, int g, int b, int a);
 
