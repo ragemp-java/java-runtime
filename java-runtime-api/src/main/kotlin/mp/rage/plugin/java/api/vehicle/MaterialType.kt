@@ -8,7 +8,7 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.plugin.java.api.vector
+package mp.rage.plugin.java.api.vehicle
 
 enum class MaterialType {
     Color,
