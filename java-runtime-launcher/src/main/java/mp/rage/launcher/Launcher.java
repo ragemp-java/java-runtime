@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Launcher {
 
+    private Launcher() {}
+
     public static void main() {
         log.info("Initializing RageJava Launcher");
         log.info("Loading JNI Library");

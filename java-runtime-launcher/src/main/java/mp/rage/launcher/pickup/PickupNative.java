@@ -13,6 +13,9 @@ package mp.rage.launcher.pickup;
 import mp.rage.api.vector.Vector3;
 
 public class PickupNative {
+
+    private PickupNative() {}
+
     // Entity Native
     public static native int getType(int pickupId);
 

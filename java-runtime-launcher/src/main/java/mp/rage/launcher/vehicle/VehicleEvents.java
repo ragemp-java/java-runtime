@@ -10,17 +10,22 @@
 
 package mp.rage.launcher.vehicle;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class VehicleEvents {
 
+    private VehicleEvents() {}
+
     static void onVehicleCreated(int vehicleId) {
-        System.out.println("incoming onVehicleCreated: " + vehicleId);
+        log.debug("incoming onVehicleCreated: {}", vehicleId);
     }
 
     static void onVehicleDestroyed(int vehicleId) {
-        System.out.println("incoming onVehicleDestroyed: " + vehicleId);
+        log.debug("incoming onVehicleDestroyed: {}", vehicleId);
     }
 
     public static void onVehicleDeath(int vehicleId, int hash, int killerId) {
-        System.out.println("incoming onVehicleDeath: " + vehicleId + " " + hash + " " + killerId);
+        log.debug("incoming onVehicleDeath: {} {} {}", vehicleId, hash, killerId);
     }
 }

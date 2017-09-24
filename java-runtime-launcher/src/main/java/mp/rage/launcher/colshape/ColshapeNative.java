@@ -13,6 +13,9 @@ package mp.rage.launcher.colshape;
 import mp.rage.api.vector.Vector3;
 
 public class ColshapeNative {
+
+    private ColshapeNative() {}
+
     // Entity Native
     public static native int getType(int colshapeId);
 
@@ -36,6 +39,6 @@ public class ColshapeNative {
     public static native void setAlpha(int colshapeId, int alpha);
 
     // Colshape Native
-    public static native boolean IsPointWithin(int colshapeId, Vector3 position);
-    public static native int GetShapeType(int colshapeId);
+    public static native boolean isPointWithin(int colshapeId, Vector3 position);
+    public static native int getShapeType(int colshapeId);
 }

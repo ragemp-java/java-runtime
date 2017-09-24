@@ -14,6 +14,9 @@ import mp.rage.api.color.RGBColor;
 import mp.rage.api.vector.Vector3;
 
 public class CheckpointNative {
+
+    private CheckpointNative() {}
+
     // Entity Native
     public static native int getType(int checkpointId);
 
@@ -39,17 +42,17 @@ public class CheckpointNative {
     // Checkpoint Native
     public static native int create(int type, float x, float y, float z, float nextX, float nextY, float nextZ, float radius, int red, int green, int blue, int alpha, boolean visible, int dimension);
 
-    public static native RGBColor GetColour(int checkpointId);
-    public static native void SetColour(int checkpointId, int r, int g, int b, int a);
+    public static native RGBColor getColour(int checkpointId);
+    public static native void setColour(int checkpointId, int r, int g, int b, int a);
 
-    public static native Vector3 GetDirection(int checkpointId);
-    public static native void SetDirection(int checkpointId, Vector3 direction);
+    public static native Vector3 getDirection(int checkpointId);
+    public static native void setDirection(int checkpointId, Vector3 direction);
 
-    public static native float GetRadius(int checkpointId);
-    public static native void SetRadius(int checkpointId, float radius);
+    public static native float getRadius(int checkpointId);
+    public static native void setRadius(int checkpointId, float radius);
 
-    public static native boolean IsVisible(int checkpointId);
-    public static native void SetVisible(int checkpointId, boolean toggle);
+    public static native boolean isVisible(int checkpointId);
+    public static native void setVisible(int checkpointId, boolean toggle);
 
 //    public static native void ShowFor(int checkpointId, std::vector<rage::IPlayer*>& players);
 //    public static native void HideFor(int checkpointId, std::vector<rage::IPlayer*>& players);

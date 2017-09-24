@@ -13,6 +13,9 @@ package mp.rage.launcher.blip;
 import mp.rage.api.vector.Vector3;
 
 public class BlipNative {
+
+    private BlipNative() {}
+
     // Entity Native
     public static native int getType(int blipId);
 
@@ -36,22 +39,19 @@ public class BlipNative {
     public static native void setAlpha(int blipId, int alpha);
 
     // Blip Native
-    public static native float GetRadius(int blipId);
+    public static native float getRadius(int blipId);
 
-    public static native int GetMode(int blipId);
+    public static native int getMode(int blipId);
 
 //    public static native void RouteFor(int blipIdstd::vector<rage::IPlayer*>& players, int colour, float scale);
 //    public static native void UnrouteFor(int blipIdstd::vector<rage::IPlayer*>& players);
 
-    public static native int GetColour(int blipId);
-    public static native void SetColour(int blipId, int colour);
+    public static native int getColour(int blipId);
+    public static native void setColour(int blipId, int colour);
 
-    public static native int GetAlpha(int blipId);
-    public static native void SetAlpha(int blipId, int alpha);
+    public static native float getScale(int blipId);
+    public static native void setScale(int blipId, float scale);
 
-    public static native float GetScale(int blipId);
-    public static native void SetScale(int blipId, float scale);
-
-    public static native String GetName(int blipId);
-    public static native void SetName(int blipId, String name);
+    public static native String getName(int blipId);
+    public static native void setName(int blipId, String name);
 }

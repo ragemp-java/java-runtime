@@ -17,6 +17,9 @@ import mp.rage.api.player.PlayerProperty;
 import mp.rage.api.vector.Vector3;
 
 public class PlayerNative {
+
+    private PlayerNative() {}
+
     // Entity Native
     public static native int getType(int id);
 

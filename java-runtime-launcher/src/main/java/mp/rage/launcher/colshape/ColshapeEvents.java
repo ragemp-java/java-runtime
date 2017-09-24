@@ -10,21 +10,26 @@
 
 package mp.rage.launcher.colshape;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ColshapeEvents {
 
-    public static void onPlayerEnterColshape(int playerId, int colshapeId) {
+    private ColshapeEvents() {}
 
+    public static void onPlayerEnterColshape(int playerId, int colshapeId) {
+        log.debug("incoming onPlayerEnterColshape: {} {}", playerId, colshapeId);
     }
 
     public static void onPlayerExitColshape(int playerId, int colshapeId) {
-
+        log.debug("incoming onPlayerExitColshape: {} {}", playerId, colshapeId);
     }
 
     public static void onColshapeCreated(int colshapeId) {
-
+        log.debug("incoming onColshapeCreated: {}", colshapeId);
     }
 
     public static void onColshapeDestroyed(int colshapeId) {
-
+        log.debug("incoming onColshapeDestroyed: {}", colshapeId);
     }
 }

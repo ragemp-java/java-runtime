@@ -13,6 +13,9 @@ package mp.rage.launcher.object;
 import mp.rage.api.vector.Vector3;
 
 public class ObjectNative {
+
+    private ObjectNative() {}
+
     // Entity Native
     public static native int getType(int objectId);
 

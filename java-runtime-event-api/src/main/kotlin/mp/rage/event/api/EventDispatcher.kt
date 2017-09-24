@@ -10,9 +10,11 @@
 
 package mp.rage.event.api
 
+import java.util.*
+
 interface EventDispatcher {
 
     fun register(event: Event, listenerMethod: (event: Event) -> Unit)
 
-    fun post(event: Event)
+    fun post(eventClass : Class<Event>, arguments: List<Any>)
 }

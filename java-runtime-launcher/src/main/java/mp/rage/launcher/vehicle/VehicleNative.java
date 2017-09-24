@@ -17,6 +17,9 @@ import mp.rage.api.vector.Vector3;
 import java.util.List;
 
 public class VehicleNative {
+
+    private VehicleNative() {}
+
     // Entity Native
     public static native int getType(int id);
 

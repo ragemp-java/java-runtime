@@ -12,6 +12,8 @@ package mp.rage.launcher.pool;
 
 public class PlayerPoolNative {
 
+     private PlayerPoolNative() {}
+
      public static native void broadcast(String message);
 
 }
