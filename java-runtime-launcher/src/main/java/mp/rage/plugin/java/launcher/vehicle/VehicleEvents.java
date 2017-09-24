@@ -12,7 +12,15 @@ package mp.rage.plugin.java.launcher.vehicle;
 
 public class VehicleEvents {
 
-    public static void onVehicleDeath(int vehicleId, int hash, int killerId) {
+    static void onVehicleCreated(int vehicleId) {
+        System.out.println("incoming onVehicleCreated: " + vehicleId);
+    }
 
+    static void onVehicleDestroyed(int vehicleId) {
+        System.out.println("incoming onVehicleDestroyed: " + vehicleId);
+    }
+
+    public static void onVehicleDeath(int vehicleId, int hash, int killerId) {
+        System.out.println("incoming onVehicleDeath: " + vehicleId + " " + hash + " " + killerId);
     }
 }
