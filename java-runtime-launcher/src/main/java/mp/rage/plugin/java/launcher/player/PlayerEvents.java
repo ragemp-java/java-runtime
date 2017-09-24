@@ -11,10 +11,19 @@
 package mp.rage.plugin.java.launcher.player;
 
 import mp.rage.plugin.java.api.vector.Vector3;
+import mp.rage.plugin.java.launcher.checkpoint.CheckpointNative;
 import mp.rage.plugin.java.launcher.vehicle.VehicleNative;
 
 @SuppressWarnings("unused")
 public class PlayerEvents {
+
+    static void onPlayerCreated(int playerId) {
+        System.out.println("incoming onPlayerCreated: " + playerId);
+    }
+
+    static void onPlayerDestroyed(int playerId) {
+        System.out.println("incoming onPlayerDestroyed: " + playerId);
+    }
 
     static void onPlayerJoin(int playerId) {
         System.out.println("incoming playerJoinEvent: " + playerId);
@@ -56,8 +65,24 @@ public class PlayerEvents {
             PlayerNative.outputChatBox(playerId, String.valueOf(vehicle));
         } else if(command.equalsIgnoreCase("putvehicle")) {
             PlayerNative.putIntoVehicle(playerId, 0, 0);
+        } else if(command.equalsIgnoreCase("giveweapons")) {
+            int[] weapons = {-1312131151, -1063057011};
+            int[] ammo = {5, 10};
+            PlayerNative.giveWeapons(playerId, weapons, ammo);
+        } else if(command.equalsIgnoreCase("numberplate")) {
+            VehicleNative.setNumberPlate(0, "KEK=TOBI");
+        } else if(command.equalsIgnoreCase("neon")) {
+            VehicleNative.setNeonsColour(0, 255, 0, 0);
+            VehicleNative.enableNeons(0, true);
+        } else if(command.equalsIgnoreCase("checkpoint")) {
+            Vector3 position = PlayerNative.getPosition(0);
+            CheckpointNative.create(1, position.getX(), position.getY(), position.getZ() -1,
+                    position.getX() + 20, position.getY(), position.getZ(), 5F,
+                    255, 0, 0, 255, true, 0);
         }
+
     }
+
 
     static void onPlayerQuit(int playerId, int exitType, String reason) {
         System.out.println("incoming onPlayerQuit: " + playerId + " " + exitType + " " + reason);
