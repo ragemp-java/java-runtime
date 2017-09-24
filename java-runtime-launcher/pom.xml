@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>java-runtime-parent</artifactId>
-        <groupId>mp.rage.plugin.java</groupId>
+        <groupId>mp.rage</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -14,12 +14,12 @@
     <dependencies>
 
         <dependency>
-            <groupId>mp.rage.plugin.java</groupId>
+            <groupId>mp.rage</groupId>
             <artifactId>java-runtime-api</artifactId>
 			<version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>mp.rage.plugin.java</groupId>
+            <groupId>mp.rage</groupId>
             <artifactId>java-runtime-common</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -52,35 +52,35 @@
                 <configuration>
                     <javahIncludes>
                         <javahInclude>
-                            <className>mp.rage.plugin.java.launcher.player.PlayerNative</className>
+                            <className>mp.rage.launcher.player.PlayerNative</className>
                             <headerName>PlayerNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>mp.rage.plugin.java.launcher.blip.BlipNative</className>
+                            <className>mp.rage.launcher.blip.BlipNative</className>
                             <headerName>BlipNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>mp.rage.plugin.java.launcher.checkpoint.CheckpointNative</className>
+                            <className>mp.rage.launcher.checkpoint.CheckpointNative</className>
                             <headerName>CheckpointNative.hpp</headerName>
                         </javahInclude>
                         <javahInclude>
-                            <className>mp.rage.plugin.java.launcher.colshape.ColshapeNative</className>
+                            <className>mp.rage.launcher.colshape.ColshapeNative</className>
                             <headerName>ColshapeNative.hpp</headerName>
                         </javahInclude>
 						<javahInclude>
-							<className>mp.rage.plugin.java.launcher.marker.MarkerNative</className>
+							<className>mp.rage.launcher.marker.MarkerNative</className>
 							<headerName>MarkerNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>mp.rage.plugin.java.launcher.object.ObjectNative</className>
+							<className>mp.rage.launcher.object.ObjectNative</className>
 							<headerName>ObjectNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>mp.rage.plugin.java.launcher.pickup.PickupNative</className>
+							<className>mp.rage.launcher.pickup.PickupNative</className>
 							<headerName>PickupNative.hpp</headerName>
 						</javahInclude>
 						<javahInclude>
-							<className>mp.rage.plugin.java.launcher.vehicle.VehicleNative</className>
+							<className>mp.rage.launcher.vehicle.VehicleNative</className>
 							<headerName>VehicleNative.hpp</headerName>
 						</javahInclude>
                     </javahIncludes>
