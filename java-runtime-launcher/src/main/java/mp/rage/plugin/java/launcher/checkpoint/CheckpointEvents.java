@@ -26,4 +26,12 @@ public class CheckpointEvents {
         PlayerNative.outputChatBox(playerId, "onExitCheckpoint");
         System.out.println("onPlayerExitCheckpoint " + playerId + " " + checkpointId);
     }
+
+    public static void onCheckpointCreated(int checkpointId) {
+        System.out.println("incoming onCheckpointCreated" + checkpointId);
+    }
+
+    public static void onCheckpointDestroyed(int checkpointId) {
+        System.out.println("incoming onCheckpointDestroyed" + checkpointId);
+    }
 }
