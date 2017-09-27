@@ -8,13 +8,9 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.event.api
+package mp.rage.common.event
 
-import java.util.*
-
-interface EventDispatcher {
-
-    fun register(event: Event, listenerMethod: (event: Event) -> Unit)
-
-    fun post(eventClass : Class<Event>, arguments: List<Any>)
-}
+@MustBeDocumented
+@Target(AnnotationTarget.CLASS)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class EventListener

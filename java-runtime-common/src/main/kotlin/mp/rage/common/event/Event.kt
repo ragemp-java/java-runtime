@@ -8,10 +8,16 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.event.api
+package mp.rage.common.event
 
-enum class EventPriority {
-    HIGH,
-    NORMAL,
-    LOW
+abstract class Event {
+    private var interrupted: Boolean = false;
+
+    fun isInterrupted(): Boolean {
+        return interrupted;
+    }
+
+    fun interrupt() {
+        interrupted = true;
+    }
 }

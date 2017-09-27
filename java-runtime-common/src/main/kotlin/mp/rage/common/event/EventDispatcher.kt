@@ -8,18 +8,11 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.event.simple
+package mp.rage.common.event
 
-import mp.rage.event.api.Event
-import mp.rage.event.api.EventDispatcher
+interface EventDispatcher {
 
-class EventDispatcherImpl : EventDispatcher {
+    fun register(event: Event, listenerMethod: (event: Event) -> Unit)
 
-    override fun register(event: Event, listenerMethod: (event: Event) -> Unit) {
-
-    }
-
-    override fun post(event: Event) {
-        println("recived event" + event.toString());
-    }
+    fun post(eventClass : Class<Event>, arguments: List<Any>)
 }

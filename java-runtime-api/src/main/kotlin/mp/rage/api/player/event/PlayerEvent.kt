@@ -10,7 +10,8 @@
 
 package mp.rage.api.player.event
 
-import mp.rage.event.api.Event
+import mp.rage.common.event.Event
+
 
 /**
  * @author Noxaro
