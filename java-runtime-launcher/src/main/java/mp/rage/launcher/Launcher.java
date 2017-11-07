@@ -11,19 +11,32 @@
 package mp.rage.launcher;
 
 import lombok.extern.slf4j.Slf4j;
+import mp.rage.api.RageJavaRuntime;
+import mp.rage.api.event.AbstractEvent;
 import mp.rage.api.exception.JNIExecutionException;
 
 import java.io.File;
+import java.util.List;
+import java.util.ServiceLoader;
 
 @Slf4j
 public class Launcher {
 
     private Launcher() {}
 
+    private static ServiceLoader<EventPublisher> eventHandlers = ServiceLoader.load(EventPublisher.class);
+    private static ServiceLoader<RageJavaRuntime> runtimes = ServiceLoader.load(RageJavaRuntime.class);
+
     /**
      * @param operatingSystem 0 for linux and 1 for windows
      */
+    @SuppressWarnings("unused") // called via jni only
     public static void main(int operatingSystem) throws JNIExecutionException {
+        initializeJNI(operatingSystem);
+        initializeRuntime();
+    }
+
+    private static void initializeJNI(int operatingSystem) throws JNIExecutionException {
         log.info("Initializing RageJava launcher");
         String fileEnding;
         if(operatingSystem == 0) {
@@ -37,5 +50,14 @@ public class Launcher {
         }
         File binaryPath = new File("plugins/RageJava" + fileEnding);
         System.load(binaryPath.getAbsolutePath());
+    }
+
+    private static void initializeRuntime() {
+        log.info("Initialize RageMP Java Runtime");
+        runtimes.forEach(RageJavaRuntime::initialize);
+    }
+
+    public static <T extends AbstractEvent> void publishEvent(Class<T> eventClass, List<Object> args) {
+        eventHandlers.forEach(eventHandler -> eventHandler.publishEvent(eventClass, args));
     }
 }

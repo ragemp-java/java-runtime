@@ -8,9 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime.event.registry
 
 import mp.rage.api.event.EventPriority
+import mp.rage.runtime.event.EventElement
 import java.lang.reflect.Method
 import java.util.*
 

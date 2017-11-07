@@ -15,6 +15,9 @@ import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
 import mp.rage.api.exception.game.InvalidEventSubscriptionException
 import mp.rage.api.player.event.PlayerJoinEvent
+import mp.rage.runtime.event.dispatcher.ConcurrentEventDispatcher
+import mp.rage.runtime.event.dispatcher.SingleEventDispatcher
+import mp.rage.runtime.player.PlayerImpl
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.Test
 
@@ -29,7 +32,7 @@ internal class EventHandlerImplTest {
 
         // WHEN
         eventHandlerImpl.registerEvents(validEventClass)
-        val playerJoinEvent = PlayerJoinEvent("/test")
+        val playerJoinEvent = PlayerJoinEvent(PlayerImpl(1))
         eventHandlerImpl.postEvent(playerJoinEvent)
 
         // THEN

@@ -13,5 +13,5 @@ package mp.rage.api.player.event
 import mp.rage.api.player.Player
 
 data class PlayerJoinEvent(
-        val player: String
-) : PlayerEvent()
+        val player: Player
+) : PlayerEvent(player)

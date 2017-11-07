@@ -8,17 +8,16 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime.event.dispatcher
 
+import kotlinx.coroutines.experimental.launch
 import mp.rage.api.event.AbstractEvent
+import mp.rage.runtime.event.registry.EventRegistry
 import org.slf4j.LoggerFactory
 
-/**
- * @author Noxaro
- */
-internal class SingleEventDispatcher : EventDispatcher {
+internal class ConcurrentEventDispatcher : EventDispatcher {
 
-    private val log = LoggerFactory.getLogger(SingleEventDispatcher::class.java)
+    private val log = LoggerFactory.getLogger(ConcurrentEventDispatcher::class.java)
 
     override fun dispatchEvent(eventRegistry: EventRegistry, abstractEvent: AbstractEvent) {
         eventRegistry.listeners.forEach { eventEntry ->
@@ -29,7 +28,9 @@ internal class SingleEventDispatcher : EventDispatcher {
                         return
                     }
                     try {
-                        it.invoke(classReference, abstractEvent)
+                        launch {
+                            it.invoke(classReference, abstractEvent)
+                        }
                     } catch (e: Throwable) {
                         log.warn("catched exception while dispatching event: {}", abstractEvent, e)
                     }
@@ -37,5 +38,4 @@ internal class SingleEventDispatcher : EventDispatcher {
             }
         }
     }
-
 }

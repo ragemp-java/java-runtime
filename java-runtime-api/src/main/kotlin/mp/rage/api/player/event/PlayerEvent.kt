@@ -11,5 +11,6 @@
 package mp.rage.api.player.event
 
 import mp.rage.api.event.AbstractEvent
+import mp.rage.api.player.Player
 
-open class PlayerEvent : AbstractEvent(true)
+abstract class PlayerEvent(player: Player) : AbstractEvent(true)

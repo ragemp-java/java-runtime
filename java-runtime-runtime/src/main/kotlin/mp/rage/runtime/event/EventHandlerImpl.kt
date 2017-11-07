@@ -15,10 +15,15 @@ import mp.rage.api.event.EventHandler
 import mp.rage.api.event.EventPriority
 import mp.rage.api.event.SubscribeEvent
 import mp.rage.api.exception.game.InvalidEventSubscriptionException
+import mp.rage.runtime.event.dispatcher.EventDispatcher
+import mp.rage.runtime.event.registry.EventRegistry
+import mp.rage.runtime.event.registry.SimpleEventRegistry
+import org.slf4j.LoggerFactory
 import java.lang.reflect.Method
 import java.util.concurrent.ConcurrentHashMap
 
 internal class EventHandlerImpl(private val eventDispatcher: EventDispatcher) : EventHandler {
+    private val log = LoggerFactory.getLogger(EventHandlerImpl::class.java)
 
     private val eventListeners = ConcurrentHashMap<Class<AbstractEvent>, EventRegistry>()
 
@@ -44,7 +49,11 @@ internal class EventHandlerImpl(private val eventDispatcher: EventDispatcher) : 
     }
 
     override fun postEvent(event: AbstractEvent) {
-        eventDispatcher.dispatchEvent(eventListeners[event.javaClass]!!, event)
+        if(eventListeners.contains(event.hashCode())) {
+            eventDispatcher.dispatchEvent(eventListeners[event.javaClass]!!, event)
+        } else {
+            log.warn("No event listener registered for event of type: {}", event::class.simpleName)
+        }
     }
 
     private fun getEventPriorityFromMethod(method: Method) : EventPriority {

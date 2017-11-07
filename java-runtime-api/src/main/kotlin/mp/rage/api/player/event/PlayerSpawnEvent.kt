@@ -8,15 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.api.player.event
 
-import mp.rage.api.event.EventPriority
-import java.lang.reflect.Method
-import java.util.*
+import mp.rage.api.player.Player
 
-internal interface EventRegistry {
-    var listeners : EnumMap<EventPriority, EventElement>;
-
-    fun addEventListener(eventPriority: EventPriority, instance: Any, method: Method)
-    fun removeEventListener(instance: Any)
-}
+data class PlayerSpawnEvent(
+        val player: Player
+) : PlayerEvent(player)

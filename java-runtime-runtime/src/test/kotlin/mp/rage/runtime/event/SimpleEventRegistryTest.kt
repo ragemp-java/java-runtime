@@ -11,6 +11,7 @@
 package mp.rage.runtime.event
 
 import mp.rage.api.event.EventPriority
+import mp.rage.runtime.event.registry.SimpleEventRegistry
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

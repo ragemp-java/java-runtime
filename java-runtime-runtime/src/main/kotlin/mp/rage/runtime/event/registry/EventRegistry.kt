@@ -8,11 +8,16 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api
+package mp.rage.runtime.event.registry
 
-import mp.rage.api.event.EventHandler
+import mp.rage.api.event.EventPriority
+import mp.rage.runtime.event.EventElement
+import java.lang.reflect.Method
+import java.util.*
 
-interface RageJavaRuntime {
-    fun initialize()
-    fun getEventHandler() : EventHandler
+internal interface EventRegistry {
+    var listeners : EnumMap<EventPriority, EventElement>;
+
+    fun addEventListener(eventPriority: EventPriority, instance: Any, method: Method)
+    fun removeEventListener(instance: Any)
 }

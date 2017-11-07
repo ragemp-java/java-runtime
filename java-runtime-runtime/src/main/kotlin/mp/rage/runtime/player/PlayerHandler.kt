@@ -8,10 +8,19 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime.player
 
-import mp.rage.api.event.AbstractEvent
+import java.util.concurrent.ConcurrentHashMap
 
-internal interface EventDispatcher {
-    fun dispatchEvent(eventRegistry: EventRegistry, abstractEvent: AbstractEvent)
+internal class PlayerHandler {
+
+    private val players = ConcurrentHashMap<Int, PlayerImpl>()
+
+    fun getPlayer(id: Int): PlayerImpl {
+        return players.getOrDefault(id, PlayerImpl(id))
+    }
+
+    fun removePlayer(id: Int) {
+        players.remove(id)
+    }
 }

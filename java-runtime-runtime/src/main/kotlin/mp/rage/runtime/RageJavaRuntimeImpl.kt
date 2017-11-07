@@ -12,11 +12,23 @@ package mp.rage.runtime
 
 import mp.rage.api.RageJavaRuntime
 import mp.rage.api.event.EventHandler
+import mp.rage.runtime.event.EventHandlerImpl
+import mp.rage.runtime.event.dispatcher.SingleEventDispatcher
+import mp.rage.runtime.player.PlayerHandler
+import org.slf4j.LoggerFactory
 
-class RageJavaRuntimeImpl : RageJavaRuntime {
+object RageJavaRuntimeImpl : RageJavaRuntime {
 
-    override fun getEventHandler(): EventHandler {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private val log = LoggerFactory.getLogger(RageJavaRuntimeImpl::class.java)
+
+    internal val eventHandler : EventHandler = EventHandlerImpl(SingleEventDispatcher())
+    internal val playerHandler : PlayerHandler = PlayerHandler()
+
+    override fun initialize() {
+        log.info("Initialize runtime")
     }
 
+    override fun getEventHandler(): EventHandler {
+        return eventHandler;
+    }
 }

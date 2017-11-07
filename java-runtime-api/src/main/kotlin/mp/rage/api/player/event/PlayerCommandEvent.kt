@@ -10,7 +10,9 @@
 
 package mp.rage.api.player.event
 
+import mp.rage.api.player.Player
+
 data class PlayerCommandEvent(
-//        val player: Player,
+        val player: Player,
         val command: String
-) : PlayerEvent()
+) : PlayerEvent(player)

@@ -8,11 +8,11 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api
+package mp.rage.api.player.event
 
-import mp.rage.api.event.EventHandler
+import mp.rage.api.player.Player
 
-interface RageJavaRuntime {
-    fun initialize()
-    fun getEventHandler() : EventHandler
-}
+data class PlayerChatEvent(
+        val player: Player,
+        val message: Any
+) : PlayerEvent(player)

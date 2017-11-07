@@ -8,14 +8,13 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime
+package mp.rage.api.player.event
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext
-import org.springframework.context.annotation.ComponentScan
+import mp.rage.api.player.Player
+import mp.rage.api.vehicle.Vehicle
 
-@ComponentScan
-class RageJavaRuntimeApplication
-
-fun main(args: Array<String>) {
-    AnnotationConfigApplicationContext(RageJavaRuntimeApplication::class.java);
-}
+data class PlayerEnterVehicleEvent(
+        val player: Player,
+        val vehicle: Vehicle,
+        val seatId: Int
+) : PlayerEvent(player)

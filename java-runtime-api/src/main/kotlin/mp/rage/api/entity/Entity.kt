@@ -13,9 +13,6 @@ package mp.rage.api.entity
 import mp.rage.api.color.RGBColor
 import mp.rage.api.vector.Vector3
 
-/**
- * @author Noxaro
- */
 interface Entity {
     fun getType(): EntityType
 

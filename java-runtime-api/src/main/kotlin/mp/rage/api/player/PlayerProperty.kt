@@ -10,9 +10,6 @@
 
 package mp.rage.api.player
 
-/**
- * @author Noxaro
- */
 data class PlayerProperty(
         val propertyId: Int,
         val drawable: Int,

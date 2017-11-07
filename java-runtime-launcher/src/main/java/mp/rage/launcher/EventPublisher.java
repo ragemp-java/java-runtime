@@ -8,11 +8,13 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api
+package mp.rage.launcher;
 
-import mp.rage.api.event.EventHandler
+import mp.rage.api.event.AbstractEvent;
+import org.jetbrains.annotations.NotNull;
 
-interface RageJavaRuntime {
-    fun initialize()
-    fun getEventHandler() : EventHandler
+import java.util.List;
+
+public interface EventPublisher {
+    <T extends AbstractEvent> void publishEvent(@NotNull Class<T> eventClass, @NotNull List<Object> args);
 }
