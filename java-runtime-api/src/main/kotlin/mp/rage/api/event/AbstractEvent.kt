@@ -8,9 +8,20 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.common.event
+package mp.rage.api.event
 
-@MustBeDocumented
-@Target(AnnotationTarget.FUNCTION)
-@Retention(AnnotationRetention.RUNTIME)
-annotation class SubscribeEvent(val eventPriority: EventPriority = EventPriority.NORMAL)
+open class AbstractEvent(private val interruptible: Boolean = true) {
+    private var interrupted = false;
+
+    fun interrupt() {
+        if(interruptible) {
+            interrupted = true;
+        } else {
+
+        }
+    }
+
+    fun isInterrupted(): Boolean {
+        return interrupted;
+    }
+}

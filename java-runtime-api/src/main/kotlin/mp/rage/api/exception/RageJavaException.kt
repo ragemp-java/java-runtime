@@ -10,4 +10,4 @@
 
 package mp.rage.api.exception
 
-open class RageJavaException(message: String, ex: Exception? = null) : Exception(message, ex)
+open class RageJavaException(reason: String) : Exception(reason)

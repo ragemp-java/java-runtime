@@ -8,16 +8,15 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.common.event
+package mp.rage.runtime.event
 
-abstract class Event {
-    private var interrupted: Boolean = false;
+import mp.rage.api.event.EventPriority
+import java.lang.reflect.Method
+import java.util.*
 
-    fun isInterrupted(): Boolean {
-        return interrupted;
-    }
+internal interface EventRegistry {
+    var listeners : EnumMap<EventPriority, EventElement>;
 
-    fun interrupt() {
-        interrupted = true;
-    }
+    fun addEventListener(eventPriority: EventPriority, instance: Any, method: Method)
+    fun removeEventListener(instance: Any)
 }

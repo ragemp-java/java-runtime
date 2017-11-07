@@ -8,11 +8,8 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.common.event
+package mp.rage.api.exception.game
 
-interface EventDispatcher {
+import mp.rage.api.exception.RageJavaException
 
-    fun register(event: Event, listenerMethod: (event: Event) -> Unit)
-
-    fun post(eventClass : Class<Event>, arguments: List<Any>)
-}
+class InvalidEventSubscriptionException(reason : String) : RageJavaException(reason);

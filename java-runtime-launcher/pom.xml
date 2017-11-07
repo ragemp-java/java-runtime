@@ -18,11 +18,6 @@
             <artifactId>java-runtime-api</artifactId>
 			<version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>mp.rage</groupId>
-            <artifactId>java-runtime-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -32,11 +27,7 @@
             <version>1.16.16</version>
         </dependency>
 
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
-        </dependency>
+
     </dependencies>
 
     <build>

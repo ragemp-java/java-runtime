@@ -8,10 +8,8 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.common.event
+package mp.rage.api.exception.game
 
-enum class EventPriority {
-    HIGH,
-    NORMAL,
-    LOW
-}
+import mp.rage.api.exception.RageJavaException
+
+class PlayerNotFoundException(playerId: Int) : RageJavaException(playerId.toString())

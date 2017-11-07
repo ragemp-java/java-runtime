@@ -11,19 +11,6 @@
 
     <artifactId>java-runtime-api</artifactId>
 
-	<dependencies>
-		<dependency>
-			<groupId>mp.rage</groupId>
-			<artifactId>java-runtime-common</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>mp.rage</groupId>
-			<artifactId>java-runtime-event-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

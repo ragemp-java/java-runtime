@@ -10,10 +10,6 @@
 
 package mp.rage.api.player.event
 
-import mp.rage.common.event.Event
+import mp.rage.api.event.AbstractEvent
 
-
-/**
- * @author Noxaro
- */
-abstract class PlayerEvent : Event()
+open class PlayerEvent : AbstractEvent(true)

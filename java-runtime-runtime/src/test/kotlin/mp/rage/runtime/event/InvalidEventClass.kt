@@ -8,9 +8,14 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.runtime.event
 
-data class PlayerCommandEvent(
-//        val player: Player,
-        val command: String
-) : PlayerEvent()
+import mp.rage.api.event.EventPriority
+import mp.rage.api.event.SubscribeEvent
+
+internal open class InvalidEventClass {
+    @SubscribeEvent(EventPriority.HIGH)
+    fun testEvent(playerCommandEvent: String) {
+
+    }
+}

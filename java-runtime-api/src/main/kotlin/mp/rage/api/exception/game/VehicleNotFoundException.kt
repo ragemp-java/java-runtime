@@ -8,9 +8,8 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.api.exception.game
 
-data class PlayerCommandEvent(
-//        val player: Player,
-        val command: String
-) : PlayerEvent()
+import mp.rage.api.exception.RageJavaException
+
+class VehicleNotFoundException(vehicleId: Int) : RageJavaException(vehicleId.toString())

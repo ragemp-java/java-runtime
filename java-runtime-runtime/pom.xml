@@ -12,26 +12,17 @@
     <artifactId>java-runtime-runtime</artifactId>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
         <dependency>
             <groupId>mp.rage</groupId>
             <artifactId>java-runtime-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-		<dependency>
-			<groupId>mp.rage</groupId>
-			<artifactId>java-runtime-common</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-        <dependency>
-            <groupId>mp.rage</groupId>
-            <artifactId>java-runtime-laucher</artifactId>
-			<version>${project.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>mp.rage</groupId>
-			<artifactId>java-runtime-event-api</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 
 	<build>

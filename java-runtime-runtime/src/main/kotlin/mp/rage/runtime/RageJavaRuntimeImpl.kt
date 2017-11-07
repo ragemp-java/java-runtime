@@ -11,6 +11,12 @@
 package mp.rage.runtime
 
 import mp.rage.api.RageJavaRuntime
+import mp.rage.api.event.EventHandler
 
 class RageJavaRuntimeImpl : RageJavaRuntime {
+
+    override fun getEventHandler(): EventHandler {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }

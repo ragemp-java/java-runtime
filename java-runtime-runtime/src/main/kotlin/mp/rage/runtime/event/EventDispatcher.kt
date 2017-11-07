@@ -8,6 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.exception
+package mp.rage.runtime.event
 
-class PlayerNotFoundException(playerId: Int) : RageJavaException(playerId.toString())
+import mp.rage.api.event.AbstractEvent
+
+internal interface EventDispatcher {
+    fun dispatchEvent(eventRegistry: EventRegistry, abstractEvent: AbstractEvent)
+}

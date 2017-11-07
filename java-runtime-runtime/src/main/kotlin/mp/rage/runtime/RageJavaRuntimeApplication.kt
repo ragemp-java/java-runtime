@@ -8,9 +8,14 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.runtime
 
-data class PlayerCommandEvent(
-//        val player: Player,
-        val command: String
-) : PlayerEvent()
+import org.springframework.context.annotation.AnnotationConfigApplicationContext
+import org.springframework.context.annotation.ComponentScan
+
+@ComponentScan
+class RageJavaRuntimeApplication
+
+fun main(args: Array<String>) {
+    AnnotationConfigApplicationContext(RageJavaRuntimeApplication::class.java);
+}

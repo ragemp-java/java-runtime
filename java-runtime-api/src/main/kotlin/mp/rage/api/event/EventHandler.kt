@@ -8,9 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.api.event
 
-data class PlayerCommandEvent(
-//        val player: Player,
-        val command: String
-) : PlayerEvent()
+interface EventHandler {
+    fun registerEvents(instance : Any);
+    fun unregisterEvents(instance : Any);
+    fun postEvent(event : AbstractEvent)
+}

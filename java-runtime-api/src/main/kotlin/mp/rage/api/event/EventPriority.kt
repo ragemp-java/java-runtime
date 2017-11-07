@@ -8,9 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.common.event
+package mp.rage.api.event
 
-@MustBeDocumented
-@Target(AnnotationTarget.CLASS)
-@Retention(AnnotationRetention.RUNTIME)
-annotation class EventListener
+enum class EventPriority {
+    HIGH,
+    NORMAL,
+    LOW
+}

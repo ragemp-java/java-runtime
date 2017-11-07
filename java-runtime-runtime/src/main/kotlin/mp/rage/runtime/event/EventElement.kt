@@ -8,9 +8,19 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.runtime.event
 
-data class PlayerCommandEvent(
-//        val player: Player,
-        val command: String
-) : PlayerEvent()
+import java.lang.reflect.Method
+
+internal class EventElement {
+
+    val references : MutableMap<Any, MutableList<Method>>;
+
+    init {
+        references = HashMap();
+    }
+
+    fun addReference(classReference: Any, methodReference: Method) {
+        references.getOrPut(classReference, {ArrayList()}).add(methodReference)
+    }
+}

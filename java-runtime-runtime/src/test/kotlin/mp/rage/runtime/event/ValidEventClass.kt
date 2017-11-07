@@ -8,6 +8,15 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.exception
+package mp.rage.runtime.event
 
-class VehicleNotFoundException(vehicleId: Int) : RageJavaException(vehicleId.toString())
+import mp.rage.api.event.EventPriority
+import mp.rage.api.event.SubscribeEvent
+import mp.rage.api.player.event.PlayerJoinEvent
+
+internal open class ValidEventClass {
+
+    @SubscribeEvent(EventPriority.HIGH)
+    fun testEvent(playerJoinEvent: PlayerJoinEvent) {
+    }
+}

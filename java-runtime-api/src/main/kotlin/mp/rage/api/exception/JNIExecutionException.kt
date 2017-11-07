@@ -10,4 +10,5 @@
 
 package mp.rage.api.exception
 
+@Suppress("unused") // currently only used inside the ragemp server plugin
 class JNIExecutionException(reason : String) : RageJavaException(reason)
