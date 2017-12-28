@@ -43,7 +43,7 @@ public class VehicleNative {
     public static native void setAlpha(int vehicleId, int alpha);
 
     // Vehicle Native
-    public static native int create(int model, float x, float y, float z, float heading, int dimension);
+    public static native int create(int model, float x, float y, float z, float heading, String numberPlate, int alpha, boolean locked, boolean engine, int dimension);
 
     public static native boolean isSirenActive(int vehicleId);
     public static native boolean isHornActive(int vehicleId);

@@ -25,7 +25,27 @@ public class VehicleEvents {
         log.debug("incoming onVehicleDestroyed: {}", vehicleId);
     }
 
-    public static void onVehicleDeath(int vehicleId, int hash, int killerId) {
+    static void onVehicleDeath(int vehicleId, int hash, int killerId) {
         log.debug("incoming onVehicleDeath: {} {} {}", vehicleId, hash, killerId);
+    }
+
+    static void onVehicleModelChange(int vehicleId, int oldModelHash) {
+        log.debug("incoming onVehicleModelChange: {} {}", vehicleId, oldModelHash);
+    }
+
+    static void onVehicleSirenToggle(int vehicleId, boolean toggle) {
+        log.debug("onVehicleSirenToggle: {} {}", vehicleId, toggle);
+    }
+
+    static void onVehicleHornToggle(int vehicleId, boolean toggle) {
+        log.debug("onVehicleHornTog gle: {} {}", vehicleId, toggle);
+    }
+
+    static void onVehicleTrailerAttached(int vehicleId, int trailerId) {
+        log.debug("onVehicleTrailerAttached: {} {}", vehicleId, trailerId);
+    }
+
+    static void onVehicleDamage(int vehicleId, float bodyHealthLoss, float engineHealthLoss) {
+        log.debug("onVehicleDamage: {} {} {}", vehicleId, bodyHealthLoss, engineHealthLoss);
     }
 }

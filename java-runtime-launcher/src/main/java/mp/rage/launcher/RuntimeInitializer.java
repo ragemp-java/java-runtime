@@ -8,12 +8,11 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api.player.event
+package mp.rage.launcher;
 
-import mp.rage.api.player.Player
-import mp.rage.api.vehicle.Vehicle
-
-data class PlayerLeftVehicleEvent(
-        val player: Player,
-        val vehicle: Vehicle
-) : PlayerEvent(player)
+/**
+ * @author Noxaro
+ */
+public interface RuntimeInitializer {
+    void initialize();
+}

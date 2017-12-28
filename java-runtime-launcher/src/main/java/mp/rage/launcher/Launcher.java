@@ -11,7 +11,6 @@
 package mp.rage.launcher;
 
 import lombok.extern.slf4j.Slf4j;
-import mp.rage.api.RageJavaRuntime;
 import mp.rage.api.event.AbstractEvent;
 import mp.rage.api.exception.JNIExecutionException;
 
@@ -25,7 +24,7 @@ public class Launcher {
     private Launcher() {}
 
     private static ServiceLoader<EventPublisher> eventHandlers = ServiceLoader.load(EventPublisher.class);
-    private static ServiceLoader<RageJavaRuntime> runtimes = ServiceLoader.load(RageJavaRuntime.class);
+    private static ServiceLoader<RuntimeInitializer> runtimes = ServiceLoader.load(RuntimeInitializer.class);
 
     /**
      * @param operatingSystem 0 for linux and 1 for windows
@@ -48,13 +47,13 @@ public class Launcher {
         } else {
             throw new JNIExecutionException("invalid operating system parameter: " + operatingSystem);
         }
-        File binaryPath = new File("plugins/RageJava" + fileEnding);
+        File binaryPath = new File("plugins" + File.separator + "RageJava" + fileEnding);
         System.load(binaryPath.getAbsolutePath());
     }
 
     private static void initializeRuntime() {
         log.info("Initialize RageMP Java Runtime");
-        runtimes.forEach(RageJavaRuntime::initialize);
+        runtimes.forEach(RuntimeInitializer::initialize);
     }
 
     public static <T extends AbstractEvent> void publishEvent(Class<T> eventClass, List<Object> args) {

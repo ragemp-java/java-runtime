@@ -63,9 +63,9 @@ public class PlayerEvents {
         Launcher.publishEvent(PlayerEnterVehicleEvent.class, Arrays.asList(playerId, vehicleId, seatId));
     }
 
-    static void onPlayerEnteredVehicle(int playerId, int vehicleId, int seatId) {
-        log.debug("incoming onPlayerEnteredVehicle: {} {} {}", playerId, vehicleId, seatId);
-        Launcher.publishEvent(PlayerEnteredVehicleEvent.class, Arrays.asList(playerId, vehicleId, seatId));
+    static void onPlayerStartEnterVehicle(int playerId, int vehicleId, int seatId) {
+        log.debug("incoming onPlayerStartEnterVehicle: {} {} {}", playerId, vehicleId, seatId);
+        Launcher.publishEvent(PlayerStartEnterVehicleEvent.class, Arrays.asList(playerId, vehicleId, seatId));
     }
 
     static void onPlayerExitVehicle(int playerId, int vehicleId) {
@@ -73,13 +73,33 @@ public class PlayerEvents {
         Launcher.publishEvent(PlayerExitVehicleEvent.class, Arrays.asList(playerId, vehicleId));
     }
 
-    static void onPlayerLeftVehicle(int playerId, int vehicleId) {
-        log.debug("incoming onPlayerLeftVehicle: {} {}", playerId, vehicleId);
-        Launcher.publishEvent(PlayerLeftVehicleEvent.class, Arrays.asList(playerId, vehicleId));
+    static void onPlayerStartExitVehicle(int playerId, int vehicleId) {
+        log.debug("incoming onPlayerStartExitVehicle: {} {}", playerId, vehicleId);
+        Launcher.publishEvent(PlayerStartExitVehicleEvent.class, Arrays.asList(playerId, vehicleId));
     }
 
     static void onPlayerDeath(int playerId, int reason, int killerId) {
         log.debug("incoming onPlayerDeath: {} {} {}", playerId, reason, killerId);
         Launcher.publishEvent(PlayerDeathEvent.class, Arrays.asList(playerId, reason, killerId));
+    }
+
+    static void onPlayerReady(int playerId) {
+        log.debug("incoming onPlayerReady: {}", playerId);
+        Launcher.publishEvent(PlayerReadyEvent.class, Collections.singletonList(playerId));
+    }
+
+    static void onPlayerDamage(int playerId, float healthLoss, float armorLoss) {
+        log.debug("incoming onPlayerDamage: {} {} {}", playerId, healthLoss, armorLoss);
+        Launcher.publishEvent(PlayerDamageEvent.class, Arrays.asList(playerId, healthLoss, armorLoss));
+    }
+
+    static void onPlayerWeaponChange(int playerId, int oldWeaponHash, int newWeaponHash) {
+        log.debug("incoming onPlayerWeaponChange: {} {} {}", playerId, oldWeaponHash, newWeaponHash);
+        Launcher.publishEvent(PlayerWeaponChangeEvent.class, Arrays.asList(playerId, oldWeaponHash, newWeaponHash));
+    }
+
+    static void onPlayerModelChange(int playerId, int oldHash) {
+        log.debug("incoming onEntityModelChange: {} {}", playerId, oldHash);
+        Launcher.publishEvent(PlayerModelChangeEvent.class, Arrays.asList(playerId, oldHash));
     }
 }

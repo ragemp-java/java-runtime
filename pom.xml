@@ -16,8 +16,7 @@
     </modules>
 
     <properties>
-        <kotlin.version>1.1.51</kotlin.version>
-        <spring.version>5.0.0.RELEASE</spring.version>
+        <kotlin.version>1.2.10</kotlin.version>
         <junit.jupiter.version>5.0.0</junit.jupiter.version>
         <junit.platform.version>1.0.0</junit.platform.version>
     </properties>
@@ -100,12 +99,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.8.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>2.11.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>

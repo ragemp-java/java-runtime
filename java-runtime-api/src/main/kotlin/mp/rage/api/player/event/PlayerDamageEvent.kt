@@ -8,10 +8,12 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api
+package mp.rage.api.player.event
 
-import mp.rage.api.event.EventHandler
+import mp.rage.api.player.Player
 
-interface RageJavaRuntime {
-    fun getEventHandler() : EventHandler
-}
+data class PlayerDamageEvent(
+        val player: Player,
+        val healthLoss: Float,
+        val armorLoss: Float
+) : PlayerEvent(player)

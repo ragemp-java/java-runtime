@@ -11,10 +11,12 @@
 package mp.rage.api.player.event
 
 import mp.rage.api.player.Player
-import mp.rage.api.vehicle.Vehicle
 
-data class PlayerEnteredVehicleEvent(
+/**
+ * @author Noxaro
+ */
+data class PlayerWeaponChangeEvent(
         val player: Player,
-        val vehicle: Vehicle,
-        val seatId: Int
+        val oldWeapon: String,
+        val newWeapon: String
 ) : PlayerEvent(player)

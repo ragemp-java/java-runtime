@@ -14,5 +14,5 @@ import mp.rage.api.player.Player
 
 data class PlayerChatEvent(
         val player: Player,
-        val message: Any
+        val message: String
 ) : PlayerEvent(player)

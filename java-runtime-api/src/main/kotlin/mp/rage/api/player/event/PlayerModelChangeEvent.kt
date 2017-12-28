@@ -8,10 +8,14 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.api
+package mp.rage.api.player.event
 
-import mp.rage.api.event.EventHandler
+import mp.rage.api.player.Player
 
-interface RageJavaRuntime {
-    fun getEventHandler() : EventHandler
-}
+/**
+ * @author Noxaro
+ */
+data class PlayerModelChangeEvent(
+        val player: Player,
+        val oldModel: String
+) : PlayerEvent(player)

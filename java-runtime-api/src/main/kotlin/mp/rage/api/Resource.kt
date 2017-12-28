@@ -10,8 +10,8 @@
 
 package mp.rage.api
 
-import mp.rage.api.event.EventHandler
-
-interface RageJavaRuntime {
-    fun getEventHandler() : EventHandler
+@Suppress("unused")
+abstract class Resource(val rageJavaRuntime: RageJavaRuntime) {
+    abstract fun start();
+    abstract fun stop();
 }
