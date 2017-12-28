@@ -12,7 +12,7 @@ package mp.rage.runtime.player
 
 import java.util.concurrent.ConcurrentHashMap
 
-internal class PlayerHandler {
+internal object PlayerHandler {
 
     private val players = ConcurrentHashMap<Int, PlayerImpl>()
 

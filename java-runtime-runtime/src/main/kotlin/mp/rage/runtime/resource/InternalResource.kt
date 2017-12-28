@@ -8,16 +8,15 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime.resource
 
-import mp.rage.api.event.EventPriority
-import mp.rage.api.event.SubscribeEvent
-import mp.rage.api.player.event.PlayerJoinEvent
+import mp.rage.api.RageJavaRuntime
+import mp.rage.api.Resource
+import mp.rage.runtime.config.ResourceConfiguration
 
-internal open class ValidEventClass {
-
-    @SubscribeEvent(EventPriority.HIGH)
-    fun testEvent(playerJoinEvent: PlayerJoinEvent) {
-        println("run")
-    }
-}
+data class InternalResource(
+        val name: String,
+        val resource: Resource,
+        val runtime: RageJavaRuntime,
+        val resourceConfiguration: ResourceConfiguration
+)

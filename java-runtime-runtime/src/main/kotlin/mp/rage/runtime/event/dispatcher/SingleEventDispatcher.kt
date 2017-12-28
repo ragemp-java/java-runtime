@@ -22,7 +22,7 @@ internal class SingleEventDispatcher : EventDispatcher {
         eventRegistry.listeners.forEach { eventEntry ->
             eventEntry.value.references.forEach { (classReference, methodReference) ->
                 methodReference.forEach {
-                    log.info("dispatching event {} ", abstractEvent::class.simpleName)
+                    log.debug("dispatching event {} ", abstractEvent::class.simpleName)
                     if (abstractEvent.isInterrupted()) {
                         log.info("stopped dispatching event because event was interrupted. Event: {}", abstractEvent.javaClass.simpleName)
                         return

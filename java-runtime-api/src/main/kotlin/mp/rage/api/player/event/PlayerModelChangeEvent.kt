@@ -12,10 +12,7 @@ package mp.rage.api.player.event
 
 import mp.rage.api.player.Player
 
-/**
- * @author Noxaro
- */
 data class PlayerModelChangeEvent(
         val player: Player,
-        val oldModel: String
+        val oldModel: Int
 ) : PlayerEvent(player)

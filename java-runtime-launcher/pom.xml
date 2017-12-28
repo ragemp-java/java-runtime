@@ -17,6 +17,7 @@
             <groupId>mp.rage</groupId>
             <artifactId>java-runtime-api</artifactId>
 			<version>${project.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>

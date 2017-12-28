@@ -8,16 +8,10 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime.config
 
-import mp.rage.api.event.EventPriority
-import mp.rage.api.event.SubscribeEvent
-import mp.rage.api.player.event.PlayerJoinEvent
-
-internal open class ValidEventClass {
-
-    @SubscribeEvent(EventPriority.HIGH)
-    fun testEvent(playerJoinEvent: PlayerJoinEvent) {
-        println("run")
-    }
-}
+data class ResourceConfiguration(
+        var resourceClass: String,
+        var author: String,
+        var version: String
+)

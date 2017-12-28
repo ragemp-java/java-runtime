@@ -13,5 +13,5 @@ package mp.rage.api
 import mp.rage.api.event.EventHandler
 
 interface RageJavaRuntime {
-    fun getEventHandler() : EventHandler
+    val eventHandler : EventHandler
 }

@@ -10,8 +10,8 @@
 
 package mp.rage.runtime.event
 
+import com.nhaarman.mockito_kotlin.eq
 import com.nhaarman.mockito_kotlin.spy
-import com.nhaarman.mockito_kotlin.times
 import com.nhaarman.mockito_kotlin.verify
 import mp.rage.api.exception.game.InvalidEventSubscriptionException
 import mp.rage.api.player.event.PlayerJoinEvent
@@ -20,7 +20,6 @@ import mp.rage.runtime.event.dispatcher.SingleEventDispatcher
 import mp.rage.runtime.player.PlayerImpl
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.Test
-
 
 internal class EventHandlerImplTest {
 
@@ -36,7 +35,7 @@ internal class EventHandlerImplTest {
         eventHandlerImpl.postEvent(playerJoinEvent)
 
         // THEN
-        verify(validEventClass, times(1)).testEvent(playerJoinEvent)
+        verify(validEventClass).testEvent(eq(playerJoinEvent))
     }
 
     @Test

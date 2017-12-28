@@ -17,8 +17,9 @@ import mp.rage.api.player.PlayerHeadBlend
 import mp.rage.api.player.PlayerProperty
 import mp.rage.api.vector.Vector3
 import mp.rage.api.vehicle.Vehicle
+import mp.rage.launcher.player.PlayerNative
 
-class PlayerImpl(val playerId: Int) : Player {
+class PlayerImpl(private val playerId: Int) : Player {
 
     override fun kick(reason: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -29,7 +30,7 @@ class PlayerImpl(val playerId: Int) : Player {
     }
 
     override fun outputChatBox(message: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.outputChatBox(playerId, message)
     }
 
     override fun notify(message: String) {
@@ -73,7 +74,7 @@ class PlayerImpl(val playerId: Int) : Player {
     }
 
     override fun getName(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getName(playerId)
     }
 
     override fun setName(name: String) {

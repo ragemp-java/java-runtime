@@ -28,6 +28,7 @@ internal class EventHandlerImpl(private val eventDispatcher: EventDispatcher) : 
     private val eventListeners = ConcurrentHashMap<Class<AbstractEvent>, EventRegistry>()
 
     override fun registerEvents(instance: Any) {
+        log.debug("Registering events for class: {}", instance::class.java.simpleName)
         val methods = instance.javaClass.methods.filter { it.annotations.any { it is SubscribeEvent } }
 
         methods.forEach {
@@ -49,10 +50,10 @@ internal class EventHandlerImpl(private val eventDispatcher: EventDispatcher) : 
     }
 
     override fun postEvent(event: AbstractEvent) {
-        if(eventListeners.contains(event.hashCode())) {
+        if(eventListeners.containsKey(event::class.java)) {
             eventDispatcher.dispatchEvent(eventListeners[event.javaClass]!!, event)
         } else {
-            log.warn("No event listener registered for event of type: {}", event::class.simpleName)
+            log.debug("No event listener registered for event of type: {}", event::class.simpleName)
         }
     }
 

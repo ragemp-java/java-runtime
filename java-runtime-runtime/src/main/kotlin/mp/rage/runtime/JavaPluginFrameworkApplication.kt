@@ -8,16 +8,16 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.event
+package mp.rage.runtime
 
-import mp.rage.api.event.EventPriority
-import mp.rage.api.event.SubscribeEvent
-import mp.rage.api.player.event.PlayerJoinEvent
+import mp.rage.launcher.RuntimeInitializer
+import mp.rage.runtime.config.Configuration
+import mp.rage.runtime.resource.ResourceManager
 
-internal open class ValidEventClass {
+class JavaPluginFrameworkApplication : RuntimeInitializer {
 
-    @SubscribeEvent(EventPriority.HIGH)
-    fun testEvent(playerJoinEvent: PlayerJoinEvent) {
-        println("run")
+    override fun initialize() {
+        val resourceManager = ResourceManager()
+        resourceManager.loadResources()
     }
 }
