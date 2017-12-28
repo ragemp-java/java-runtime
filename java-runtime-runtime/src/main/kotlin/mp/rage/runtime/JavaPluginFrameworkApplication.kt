@@ -11,12 +11,12 @@
 package mp.rage.runtime
 
 import mp.rage.launcher.RuntimeInitializer
-import mp.rage.runtime.config.Configuration
 import mp.rage.runtime.resource.ResourceManager
 
 class JavaPluginFrameworkApplication : RuntimeInitializer {
 
     override fun initialize() {
+        Thread.sleep(2000)
         val resourceManager = ResourceManager()
         resourceManager.loadResources()
     }

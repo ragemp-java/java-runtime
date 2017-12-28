@@ -8,13 +8,15 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.resource
+package mp.rage.runtime.command
 
-import mp.rage.api.RageJavaRuntime
-import mp.rage.api.command.CommandHandler
-import mp.rage.api.event.EventHandler
+import mp.rage.api.command.BasicCommand
+import mp.rage.api.command.Command
+import mp.rage.api.player.Player
 
-data class ResourceRuntime(
-        override val eventHandler: EventHandler,
-        override val commandHandler: CommandHandler
-) : RageJavaRuntime
+@Command(["testCommand", "command"])
+class ValidCommandClass : BasicCommand {
+    override fun execute(player: Player, arguments: List<String>) {
+        throw Exception("test")
+    }
+}

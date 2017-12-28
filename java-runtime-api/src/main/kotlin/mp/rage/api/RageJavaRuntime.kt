@@ -10,8 +10,10 @@
 
 package mp.rage.api
 
+import mp.rage.api.command.CommandHandler
 import mp.rage.api.event.EventHandler
 
 interface RageJavaRuntime {
     val eventHandler : EventHandler
+    val commandHandler : CommandHandler
 }

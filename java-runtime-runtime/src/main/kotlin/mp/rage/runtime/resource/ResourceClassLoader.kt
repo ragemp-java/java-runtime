@@ -29,9 +29,11 @@ class ResourceClassLoader() {
         method.isAccessible = true
     }
 
-    fun loadClass(uri: URL, resourceConfiguration: ResourceConfiguration, rageJavaRuntime: RageJavaRuntime): Resource {
+    fun loadClass(uri: URL) {
         method.invoke(classloader, uri)
+    }
 
+    fun createClass(resourceConfiguration: ResourceConfiguration, rageJavaRuntime: RageJavaRuntime): Resource {
         val constructor = classloader
                 .loadClass(resourceConfiguration.resourceClass)
                 .getConstructor(RageJavaRuntime::class.java)

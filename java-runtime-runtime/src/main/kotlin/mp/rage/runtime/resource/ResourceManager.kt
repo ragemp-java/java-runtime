@@ -11,6 +11,7 @@
 package mp.rage.runtime.resource
 
 import mp.rage.api.RageJavaRuntime
+import mp.rage.runtime.command.SimpleCommandHandler
 import mp.rage.runtime.config.Configuration
 import mp.rage.runtime.config.ResourceConfiguration
 import mp.rage.runtime.event.EventInstanceManager
@@ -37,11 +38,10 @@ class ResourceManager {
             try {
                 resourceConfiguration = readResourceConfiguration(file)
 
-                val runtime = createRuntimeInstance(resourceConfiguration.resourceClass)
-                val resource = resourceClassLoader.loadClass(
-                        file.toURI().toURL(),
-                        resourceConfiguration,
-                        runtime)
+                resourceClassLoader.loadClass(file.toURI().toURL())
+                val runtime = createRuntimeInstance(resourceConfiguration)
+                val resource = resourceClassLoader.createClass(resourceConfiguration, runtime)
+
                 val internalResource = InternalResource(it, resource, runtime, resourceConfiguration)
                 tryToStartResource(internalResource)
             } catch (e: Throwable) {
@@ -62,7 +62,7 @@ class ResourceManager {
     }
 
     fun unloadResource(name: String) {
-        if(!resources.containsKey(name)) {
+        if (!resources.containsKey(name)) {
             return
         }
 
@@ -72,9 +72,10 @@ class ResourceManager {
         resources.remove(name)
     }
 
-    internal fun createRuntimeInstance(owner: String): RageJavaRuntime {
-        val eventHandler = EventInstanceManager.createInstance(owner)
-        return ResourceRuntime(eventHandler)
+    internal fun createRuntimeInstance(resourceConfiguration: ResourceConfiguration): RageJavaRuntime {
+        val eventHandler = EventInstanceManager.createInstance(resourceConfiguration.resourceClass)
+        val simpleCommandHandler = SimpleCommandHandler(eventHandler, resourceConfiguration)
+        return ResourceRuntime(eventHandler, simpleCommandHandler)
     }
 
     internal fun readResourceConfiguration(file: File): ResourceConfiguration {

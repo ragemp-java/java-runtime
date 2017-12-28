@@ -11,6 +11,5 @@
 package mp.rage.api.command
 
 interface CommandHandler {
-
-    fun setCommandActive(command: BasicCommand, active: Boolean)
+    fun setCommandActive(command: String, active: Boolean)
 }

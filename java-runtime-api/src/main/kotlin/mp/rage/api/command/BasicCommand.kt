@@ -13,9 +13,9 @@ package mp.rage.api.command
 import mp.rage.api.player.Player
 
 interface BasicCommand {
-    fun beforeExecute(player: Player, arguments: Array<String>): Boolean {
+    fun beforeExecute(player: Player, arguments: List<String>): Boolean {
         return true;
     }
 
-    fun execute(player: Player, arguments: Array<String>);
+    fun execute(player: Player, arguments: List<String>);
 }

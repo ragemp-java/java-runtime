@@ -8,13 +8,11 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.resource
+package mp.rage.runtime.command
 
-import mp.rage.api.RageJavaRuntime
-import mp.rage.api.command.CommandHandler
-import mp.rage.api.event.EventHandler
+import java.util.concurrent.atomic.AtomicBoolean
 
-data class ResourceRuntime(
-        override val eventHandler: EventHandler,
-        override val commandHandler: CommandHandler
-) : RageJavaRuntime
+data class InternalCommand(
+        val commandClass : Class<*>,
+        val active: AtomicBoolean
+)
