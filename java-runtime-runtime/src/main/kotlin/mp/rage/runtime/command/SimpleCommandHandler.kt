@@ -53,13 +53,13 @@ class SimpleCommandHandler(eventHandler: EventHandler, resourceConfiguration: Re
             return
         }
 
-        if(!commands[command]!!.active.get()) {
-            playerCommandEvent.player.outputChatBox("currently disabled")
-            return
-        }
-
         val clazz = commands[command]!!.commandClass
         val basicCommand = clazz.constructors.first().newInstance() as BasicCommand
+
+        if(!commands[command]!!.active.get()) {
+            basicCommand.whenDisabled(playerCommandEvent.player, arguments)
+            return
+        }
 
         try {
             if(basicCommand.beforeExecute(playerCommandEvent.player, arguments.toList())) {

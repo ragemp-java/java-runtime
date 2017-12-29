@@ -18,4 +18,8 @@ interface BasicCommand {
     }
 
     fun execute(player: Player, arguments: List<String>);
+
+    fun whenDisabled(player: Player, arguments: List<String>) {
+        player.outputChatBox("This command is currently disabled")
+    }
 }
