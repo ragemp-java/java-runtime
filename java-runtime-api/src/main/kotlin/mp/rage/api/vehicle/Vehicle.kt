@@ -11,15 +11,16 @@
 package mp.rage.api.vehicle
 
 import mp.rage.api.entity.Entity
+import mp.rage.api.player.Player
 
 
 interface Vehicle : Entity {
-    fun create(model: Int, x: Float, y: Float, z: Float, heading: Float, dimension: Int): Int
+    fun create(model: Int, x: Float, y: Float, z: Float, heading: Float, numberPlate: String, alpha: Int, locked: Boolean, engine: Boolean, dimension: Int): Int
 
     fun isSirenActive(): Boolean
     fun isHornActive(): Boolean
     fun areHighbeamsActive(): Boolean
-    fun ireLightsActive(): Boolean
+    fun areLightsActive(): Boolean
     fun isEngineActive(): Boolean
     fun isRocketBoostActive(): Boolean
     fun isBrakeActive(): Boolean
@@ -28,9 +29,9 @@ interface Vehicle : Entity {
     fun getEngineHealth(): Float
 
     fun getBodyHealth(): Float
-    fun getOccupant(seat: Int): Int
-    fun getOccupants(): List<Int>
-    fun setOccupant(seat: Int, playerId: Int)
+    fun getOccupant(seat: Int): Player
+    fun getOccupants(): List<Player>
+    fun setOccupant(seat: Int, player: Player)
 
     fun isLocked(): Boolean
     fun lock(toggle: Boolean)

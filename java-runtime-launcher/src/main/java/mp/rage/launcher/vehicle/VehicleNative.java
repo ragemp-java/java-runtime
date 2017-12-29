@@ -48,7 +48,7 @@ public class VehicleNative {
     public static native boolean isSirenActive(int vehicleId);
     public static native boolean isHornActive(int vehicleId);
     public static native boolean areHighbeamsActive(int vehicleId);
-    public static native boolean ireLightsActive(int vehicleId);
+    public static native boolean areLightsActive(int vehicleId);
     public static native boolean isEngineActive(int vehicleId);
     public static native boolean isRocketBoostActive(int vehicleId);
     public static native boolean isBrakeActive(int vehicleId);

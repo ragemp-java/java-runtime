@@ -10,10 +10,11 @@
 
 package mp.rage.api.entity
 
-import mp.rage.api.color.RGBColor
 import mp.rage.api.vector.Vector3
 
 interface Entity {
+    fun getId(): Int;
+
     fun getType(): EntityType
 
     fun destroy()
