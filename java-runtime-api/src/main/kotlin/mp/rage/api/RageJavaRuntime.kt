@@ -16,4 +16,5 @@ import mp.rage.api.event.EventHandler
 interface RageJavaRuntime {
     val eventHandler : EventHandler
     val commandHandler : CommandHandler
+    val resourceManager: ResourceManager
 }

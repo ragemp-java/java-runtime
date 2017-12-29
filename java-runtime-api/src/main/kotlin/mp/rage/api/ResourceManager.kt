@@ -8,15 +8,9 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.resource
+package mp.rage.api
 
-import mp.rage.api.RageJavaRuntime
-import mp.rage.api.ResourceManager
-import mp.rage.api.command.CommandHandler
-import mp.rage.api.event.EventHandler
-
-data class ResourceRuntime(
-        override val eventHandler: EventHandler,
-        override val commandHandler: CommandHandler,
-        override val resourceManager: ResourceManager
-) : RageJavaRuntime
+interface ResourceManager {
+    fun loadResource(resourceName: String)
+    fun unloadResource(resourceName: String)
+}

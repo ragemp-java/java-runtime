@@ -11,6 +11,7 @@
 package mp.rage.runtime.resource
 
 import mp.rage.api.RageJavaRuntime
+import mp.rage.api.ResourceManager
 import mp.rage.runtime.command.SimpleCommandHandler
 import mp.rage.runtime.config.Configuration
 import mp.rage.runtime.config.ResourceConfiguration
@@ -19,34 +20,38 @@ import org.slf4j.LoggerFactory
 import java.io.File
 import java.util.zip.ZipFile
 
-class ResourceManager {
+class ResourceManagerImpl : ResourceManager {
 
-    private val log = LoggerFactory.getLogger(ResourceManager::class.java)
+    private val log = LoggerFactory.getLogger(ResourceManagerImpl::class.java)
     private val resourceClassLoader = ResourceClassLoader()
     private val resources = HashMap<String, InternalResource>()
 
     fun loadResources() {
         Configuration.getRuntimeConfiguration().resources.forEach {
-            val file = File("plugins" + File.separator + "resources" + File.separator + it + ".jar")
+            loadResource(it)
+        }
+    }
 
-            if (!file.exists()) {
-                log.error("Cloud not find configured resource: {}", it)
-                return
-            }
+    override fun loadResource(resourceName: String) {
+        val file = File("plugins" + File.separator + "resources" + File.separator + resourceName + ".jar")
 
-            var resourceConfiguration: ResourceConfiguration? = null
-            try {
-                resourceConfiguration = readResourceConfiguration(file)
+        if (!file.exists()) {
+            log.error("Cloud not find configured resource: {}", resourceName)
+            return
+        }
 
-                resourceClassLoader.loadClass(file.toURI().toURL())
-                val runtime = createRuntimeInstance(resourceConfiguration)
-                val resource = resourceClassLoader.createClass(resourceConfiguration, runtime)
+        var resourceConfiguration: ResourceConfiguration? = null
+        try {
+            resourceConfiguration = readResourceConfiguration(file)
 
-                val internalResource = InternalResource(it, resource, runtime, resourceConfiguration)
-                tryToStartResource(internalResource)
-            } catch (e: Throwable) {
-                log.error("Failed to load resource: '{}' with configuration: {}", it, resourceConfiguration, e)
-            }
+            resourceClassLoader.loadClass(file.toURI().toURL())
+            val runtime = createRuntimeInstance(resourceName, resourceConfiguration)
+            val resource = resourceClassLoader.createClass(resourceConfiguration, runtime)
+
+            val internalResource = InternalResource(resourceName, resource, runtime, resourceConfiguration)
+            tryToStartResource(internalResource)
+        } catch (e: Throwable) {
+            log.error("Failed to load resource: '{}' with configuration: {}", resourceName, resourceConfiguration, e)
         }
     }
 
@@ -61,21 +66,23 @@ class ResourceManager {
         }
     }
 
-    fun unloadResource(name: String) {
-        if (!resources.containsKey(name)) {
+    override fun unloadResource(resourceName: String) {
+        log.info("Unloading resource with name: '{}'", resourceName)
+        if (!resources.containsKey(resourceName)) {
             return
         }
 
-        val internalResource = resources[name]!!
+        val internalResource = resources[resourceName]!!
         internalResource.resource.stop()
         EventInstanceManager.removeInstance(internalResource.name)
-        resources.remove(name)
+        resources.remove(resourceName)
+        log.info("Unloading resource with name: '{}' complete", resourceName)
     }
 
-    internal fun createRuntimeInstance(resourceConfiguration: ResourceConfiguration): RageJavaRuntime {
-        val eventHandler = EventInstanceManager.createInstance(resourceConfiguration.resourceClass)
+    internal fun createRuntimeInstance(resourceName: String, resourceConfiguration: ResourceConfiguration): RageJavaRuntime {
+        val eventHandler = EventInstanceManager.createInstance(resourceName)
         val simpleCommandHandler = SimpleCommandHandler(eventHandler, resourceConfiguration)
-        return ResourceRuntime(eventHandler, simpleCommandHandler)
+        return ResourceRuntime(eventHandler, simpleCommandHandler, this)
     }
 
     internal fun readResourceConfiguration(file: File): ResourceConfiguration {
