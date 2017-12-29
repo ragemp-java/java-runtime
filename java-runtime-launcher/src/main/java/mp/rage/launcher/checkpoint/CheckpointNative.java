@@ -10,7 +10,7 @@
 
 package mp.rage.launcher.checkpoint;
 
-import mp.rage.api.color.RGBColor;
+import mp.rage.api.color.RGBAColor;
 import mp.rage.api.vector.Vector3;
 
 public class CheckpointNative {
@@ -42,11 +42,11 @@ public class CheckpointNative {
     // Checkpoint Native
     public static native int create(int type, float x, float y, float z, float nextX, float nextY, float nextZ, float radius, int red, int green, int blue, int alpha, boolean visible, int dimension);
 
-    public static native RGBColor getColour(int checkpointId);
+    public static native RGBAColor getColour(int checkpointId);
     public static native void setColour(int checkpointId, int r, int g, int b, int a);
 
     public static native Vector3 getDirection(int checkpointId);
-    public static native void setDirection(int checkpointId, Vector3 direction);
+    public static native void setDirection(int checkpointId, float x, float y, float z);
 
     public static native float getRadius(int checkpointId);
     public static native void setRadius(int checkpointId, float radius);
@@ -54,6 +54,6 @@ public class CheckpointNative {
     public static native boolean isVisible(int checkpointId);
     public static native void setVisible(int checkpointId, boolean toggle);
 
-//    public static native void ShowFor(int checkpointId, std::vector<rage::IPlayer*>& players);
-//    public static native void HideFor(int checkpointId, std::vector<rage::IPlayer*>& players);
+    public static native void showFor(int checkpointId, int[] players);
+    public static native void hideFor(int checkpointId, int[] players);
 }

@@ -16,11 +16,13 @@
 			<groupId>mp.rage</groupId>
 			<artifactId>java-runtime-api</artifactId>
 			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>mp.rage</groupId>
 			<artifactId>java-runtime-launcher</artifactId>
 			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
