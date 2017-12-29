@@ -17,7 +17,7 @@ import mp.rage.api.exception.game.InvalidEventSubscriptionException
 import mp.rage.api.player.event.PlayerJoinEvent
 import mp.rage.runtime.event.dispatcher.ConcurrentEventDispatcher
 import mp.rage.runtime.event.dispatcher.SingleEventDispatcher
-import mp.rage.runtime.player.PlayerImpl
+import mp.rage.runtime.game.player.PlayerImpl
 import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.Test
 

@@ -8,7 +8,7 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.player
+package mp.rage.runtime.game.player
 
 import mp.rage.api.entity.EntityType
 import mp.rage.api.player.Player
@@ -20,6 +20,9 @@ import mp.rage.api.vehicle.Vehicle
 import mp.rage.launcher.player.PlayerNative
 
 class PlayerImpl(private val playerId: Int) : Player {
+    override fun getId(): Int {
+        return playerId;
+    }
 
     override fun kick(reason: String) {
         PlayerNative.kick(playerId, reason)

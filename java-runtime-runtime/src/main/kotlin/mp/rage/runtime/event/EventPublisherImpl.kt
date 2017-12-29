@@ -12,7 +12,7 @@ package mp.rage.runtime.event
 
 import mp.rage.api.event.AbstractEvent
 import mp.rage.launcher.EventPublisher
-import mp.rage.runtime.player.PlayerHandler
+import mp.rage.runtime.game.player.PlayerHandler
 
 internal class EventPublisherImpl : EventPublisher {
 

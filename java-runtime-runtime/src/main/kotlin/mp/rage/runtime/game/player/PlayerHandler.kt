@@ -8,7 +8,7 @@
  * See the file COPYING included with this distribution for more information.
  */
 
-package mp.rage.runtime.player
+package mp.rage.runtime.game.player
 
 import java.util.concurrent.ConcurrentHashMap
 
