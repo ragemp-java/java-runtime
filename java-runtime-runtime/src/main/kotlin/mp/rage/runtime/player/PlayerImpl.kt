@@ -22,11 +22,11 @@ import mp.rage.launcher.player.PlayerNative
 class PlayerImpl(private val playerId: Int) : Player {
 
     override fun kick(reason: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.kick(playerId, reason)
     }
 
     override fun ban(reason: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.ban(playerId, reason)
     }
 
     override fun outputChatBox(message: String) {
@@ -34,31 +34,32 @@ class PlayerImpl(private val playerId: Int) : Player {
     }
 
     override fun notify(message: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.notify(playerId, message)
     }
 
     override fun spawn(position: Vector3, heading: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.spawn(playerId, position.x, position.y, position.z, heading)
     }
 
     override fun playAnimation(dist: String, name: String, speed: Float, flags: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.playAnimation(playerId, dist, name, speed, flags)
     }
 
     override fun playScenario(scenario: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.playScenario(playerId, scenario)
     }
 
     override fun stopAnimation() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.stopAnimation(playerId)
     }
 
     override fun getClothes(componentNumber: Int): PlayerClothes {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getClothes(playerId, componentNumber)
     }
 
     override fun setClothes(componentNumber: Int, playerCloth: PlayerClothes) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        PlayerNative.setClothes(playerId, componentNumber, playerCloth)
     }
 
     override fun getProp(propId: Int): PlayerProperty {
@@ -70,7 +71,7 @@ class PlayerImpl(private val playerId: Int) : Player {
     }
 
     override fun eval(code: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.eval(playerId, code)
     }
 
     override fun getName(): String {
@@ -78,87 +79,89 @@ class PlayerImpl(private val playerId: Int) : Player {
     }
 
     override fun setName(name: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setName(playerId, name)
     }
 
     override fun isAiming(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isAiming(playerId)
     }
 
     override fun getHeading(): Float {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getHeading(playerId)
     }
 
     override fun setHeading(heading: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setHeading(playerId, heading)
     }
 
     override fun getMoveSpeed(): Float {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getMoveSpeed(playerId)
     }
 
     override fun getHealth(): Float {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getHealth(playerId)
     }
 
     override fun setHealth(health: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setHealth(playerId, health)
     }
 
     override fun getArmor(): Float {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getArmor(playerId)
     }
 
     override fun setArmor(armor: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setArmor(playerId, armor)
     }
 
     override fun getAimingAt(): Vector3 {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getAimingAt(playerId)
     }
 
     override fun getPing(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getPing(playerId)
     }
 
     override fun getKickReason(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getKickReason(playerId)
     }
 
     override fun getIp(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getIp(playerId)
     }
 
     override fun isJumping(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isJumping(playerId)
     }
 
     override fun isInCover(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isInCover(playerId)
     }
 
     override fun isEnteringVehicle(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isEnteringVehicle(playerId)
     }
 
     override fun isLeavingVehicle(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isLeavingVehicle(playerId)
     }
 
     override fun isClimbing(): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.isClimbing(playerId)
     }
 
     override fun getActionString(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getActionString(playerId)
     }
 
     override fun getVehicle(): Vehicle {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        return PlayerNative.getVehicle(playerId)
     }
 
     override fun putIntoVehicle(vehicle: Vehicle, seatId: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        PlayerNative.putIntoVehicle(playerId, vehicle.get)
     }
 
     override fun removeFromVehicle() {
@@ -170,106 +173,107 @@ class PlayerImpl(private val playerId: Int) : Player {
     }
 
     override fun getEyeColor(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getEyeColor(playerId)
     }
 
     override fun setEyeColor(color: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.setEyeColor(playerId, color)
     }
 
     override fun getHairColor(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getHairColor(playerId)
     }
 
     override fun getHairHighlightColor(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getHairHighlightColor(playerId)
     }
 
     override fun setHairColor(color: Int, highlightColour: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setHairColor(playerId, color, highlightColour)
     }
 
     override fun getFaceFeature(id: Int): Float {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getFaceFeature(playerId, id)
     }
 
     override fun setFaceFeature(id: Int, scale: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setFaceFeature(playerId, id, scale)
     }
 
     override fun getHeadBlend(): PlayerHeadBlend {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//        return PlayerNative.getHeadBlend(playerId)
     }
 
     override fun setHeadBlend(shapeFirstID: Int, shapeSecondID: Int, shapeThirdID: Int, skinFirstID: Int, skinSecondID: Int, skinThirdID: Int, shapeMix: Float, skinMix: Float, thirdMix: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setHeadBlend(playerId, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix)
     }
 
     override fun updateHeadBlend(shapeMix: Float, skinMix: Float, thirdMix: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.updateHeadBlend(playerId, shapeMix, skinMix, thirdMix)
     }
 
     override fun getWeapon(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getWeapon(playerId)
     }
 
     override fun giveWeapon(hash: Int, ammo: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.giveWeapon(playerId, hash, ammo)
     }
 
     override fun getSerial(): String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getSerial(playerId)
     }
 
     override fun getType(): EntityType {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return EntityType.values()[PlayerNative.getType(playerId)]
     }
 
     override fun destroy() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.destroy(playerId)
     }
 
     override fun getDimension(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getDimension(playerId)
     }
 
     override fun setDimension(dimensionId: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setDimension(playerId, dimensionId)
     }
 
     override fun getPosition(): Vector3 {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getPosition(playerId)
     }
 
     override fun setPosition(vector3: Vector3) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setPosition(playerId, vector3.x, vector3.y, vector3.z)
     }
 
     override fun getRotation(): Vector3 {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getRotation(playerId)
     }
 
     override fun setRotation(vector3: Vector3) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.setRotation(playerId, vector3.x, vector3.y, vector3.z)
     }
 
     override fun getModel(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getModel(playerId)
     }
 
     override fun setModel(modelId: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        PlayerNative.setModel(playerId, modelId)
     }
 
     override fun getVelocity(): Vector3 {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getVelocity(playerId);
     }
 
     override fun getAlpha(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.getAlpha(playerId)
     }
 
     override fun setAlpha(alpha: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return PlayerNative.setAlpha(playerId, alpha)
     }
 }
