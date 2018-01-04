@@ -10,13 +10,12 @@
 
 package mp.rage.api.vehicle
 
+import mp.rage.api.color.RGBColor
 import mp.rage.api.entity.Entity
 import mp.rage.api.player.Player
 
 
 interface Vehicle : Entity {
-    fun create(model: Int, x: Float, y: Float, z: Float, heading: Float, numberPlate: String, alpha: Int, locked: Boolean, engine: Boolean, dimension: Int): Int
-
     fun isSirenActive(): Boolean
     fun isHornActive(): Boolean
     fun areHighbeamsActive(): Boolean
@@ -48,11 +47,11 @@ interface Vehicle : Entity {
     fun enableNeons(toggle: Boolean)
 
     fun setNeonsColour(r: Int, g: Int, b: Int)
-    fun getNeonsColour(): mp.rage.api.color.RGBColor
+    fun getNeonsColour(): RGBColor
 
     fun repair()
 
-    fun getColourRGB(id: Int): mp.rage.api.color.RGBColor
+    fun getColourRGB(id: Int): RGBColor
     fun getColour(id: Int): Int
     fun getPaint(id: Int): Int
 

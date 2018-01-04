@@ -43,20 +43,31 @@ public class VehicleNative {
     public static native void setAlpha(int vehicleId, int alpha);
 
     // Vehicle Native
-    public static native int create(int model, float x, float y, float z, float heading, String numberPlate, int alpha, boolean locked, boolean engine, int dimension);
-
     public static native boolean isSirenActive(int vehicleId);
+    public static native void setSirenActive(int vehicleId, boolean toggle);
+
     public static native boolean isHornActive(int vehicleId);
+
     public static native boolean areHighbeamsActive(int vehicleId);
+    public static native void setHighbeamsActive(int vehicleId, boolean toggle);
+
     public static native boolean areLightsActive(int vehicleId);
+    public static native void setLightsActive(int vehicleId, boolean toggle);
+
     public static native boolean isEngineActive(int vehicleId);
+    public static native void setEngineActive(int vehicleId, boolean toggle);
+
+    public static native boolean areTaxiLightsActive(int vehicleId);
+    public static native void setTaxiLightsActive(int vehicleId, boolean toggle);
+
     public static native boolean isRocketBoostActive(int vehicleId);
     public static native boolean isBrakeActive(int vehicleId);
     public static native float getSteerAngle(int vehicleId);
     public static native float getGasPedalState(int vehicleId);
-    public static native float getEngineHealth(int vehicleId);
 
+    public static native float getEngineHealth(int vehicleId);
     public static native float getBodyHealth(int vehicleId);
+    
     public static native int getOccupant(int vehicleId, int seat);
     public static native List<Integer> getOccupants(int vehicleId);
     public static native void setOccupant(int vehicleId, int seat, int playerId);
@@ -92,4 +103,43 @@ public class VehicleNative {
 
     public static native String getNumberPlate(int vehicleId);
     public static native void setNumberPlate(int vehicleId, String numberPlate);
+
+    public static native int GetLivery(int vehicleId);
+    public static native void SetLivery(int vehicleId, int livery);
+
+    public static native int GetWheelColor(int vehicleId);
+    public static native void SetWheelColor(int vehicleId, int color);
+
+    public static native int GetWheelType(int vehicleId);
+    public static native void SetWheelType(int vehicleId, int type);
+
+    public static native int GetNumberPlateType(int vehicleId);
+    public static native void SetNumberPlateType(int vehicleId, int type);
+
+    public static native int GetPearlescentColor(int vehicleId);
+    public static native void SetPearlescentColor(int vehicleId, int color);
+
+    public static native int GetWindowTint(int vehicleId);
+    public static native void SetWindowTint(int vehicleId, int tint);
+
+    public static native int GetDashboardColor(int vehicleId);
+    public static native void SetDashboardColor(int vehicleId, int color);
+
+    public static native int GetTrimColor(int vehicleId);
+    public static native void SetTrimColor(int vehicleId, int type);
+
+    public static native boolean GetExtra(int vehicleId, int id);
+    public static native void SetExtra(int vehicleId, int id, boolean state);
+
+    public static native float GetMovableState(int vehicleId);
+
+    // Entity Pool
+    public static native int length();
+    public static native int count();
+
+    public static native List<Integer> getInRange(float x, float y, float z, float range, int dimensionId);
+    public static native List<Integer> getInDimension(int dimensionId);
+
+    // Vehicle Pool
+    public static native int create(int model, float x, float y, float z, float heading, String numberPlate, int alpha, boolean locked, boolean engine, int dimension);
 }

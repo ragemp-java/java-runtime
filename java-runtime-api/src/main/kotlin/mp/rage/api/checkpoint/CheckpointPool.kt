@@ -11,24 +11,9 @@
 package mp.rage.api.checkpoint
 
 import mp.rage.api.color.RGBAColor
-import mp.rage.api.entity.Entity
-import mp.rage.api.player.Player
+import mp.rage.api.entity.EntityPool
 import mp.rage.api.vector.Vector3
 
-interface Checkpoint : Entity {
-
-    fun getColour(): RGBAColor
-    fun setColour(rgbaColor: RGBAColor)
-
-    fun getDirection(): Vector3
-    fun setDirection(direction: Vector3)
-
-    fun getRadius(): Float
-    fun setRadius(radius: Float)
-
-    fun isVisible(): Boolean
-    fun setVisible(toggle: Boolean)
-
-    fun showFor(players: List<Player>)
-    fun hideFor(players: List<Player>)
+interface CheckpointPool : EntityPool<Checkpoint> {
+    fun create(type: Int, position: Vector3, nextPosition: Vector3, radius: Float, rgbaColor: RGBAColor, visible: Boolean, dimension: Int): Checkpoint
 }

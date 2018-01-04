@@ -10,11 +10,18 @@
 
 package mp.rage.api
 
+import mp.rage.api.checkpoint.CheckpointPool
 import mp.rage.api.command.CommandHandler
 import mp.rage.api.event.EventHandler
+import mp.rage.api.player.PlayerPool
+import mp.rage.api.vehicle.VehiclePool
 
 interface RageJavaRuntime {
     val eventHandler : EventHandler
     val commandHandler : CommandHandler
     val resourceManager: ResourceManager
+
+    val playerPool: PlayerPool
+    val vehiclePool: VehiclePool
+    val checkpointPool: CheckpointPool
 }

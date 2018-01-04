@@ -13,6 +13,8 @@ package mp.rage.launcher.checkpoint;
 import mp.rage.api.color.RGBAColor;
 import mp.rage.api.vector.Vector3;
 
+import java.util.List;
+
 public class CheckpointNative {
 
     private CheckpointNative() {}
@@ -40,8 +42,6 @@ public class CheckpointNative {
     public static native void setAlpha(int checkpointId, int alpha);
 
     // Checkpoint Native
-    public static native int create(int type, float x, float y, float z, float nextX, float nextY, float nextZ, float radius, int red, int green, int blue, int alpha, boolean visible, int dimension);
-
     public static native RGBAColor getColour(int checkpointId);
     public static native void setColour(int checkpointId, int r, int g, int b, int a);
 
@@ -56,4 +56,14 @@ public class CheckpointNative {
 
     public static native void showFor(int checkpointId, int[] players);
     public static native void hideFor(int checkpointId, int[] players);
+
+    // Entity Pool
+    public static native int length();
+    public static native int count();
+
+    public static native List<Integer> getInRange(float x, float y, float z, float range, int dimensionId);
+    public static native List<Integer> getInDimension(int dimensionId);
+
+    // Checkpoint Pool
+    public static native int create(int type, float x, float y, float z, float nextX, float nextY, float nextZ, float radius, int red, int green, int blue, int alpha, boolean visible, int dimension);
 }
