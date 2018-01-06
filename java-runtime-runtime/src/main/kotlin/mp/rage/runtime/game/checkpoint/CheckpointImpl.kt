@@ -18,9 +18,6 @@ import mp.rage.api.vector.Vector3
 import mp.rage.launcher.checkpoint.CheckpointNative
 
 class CheckpointImpl(val checkpointId: Int) : Checkpoint {
-    override fun create(type: Int, position: Vector3, nextPosition: Vector3, radius: Float, rgbaColor: RGBAColor, visible: Boolean, dimension: Int): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun getColour(): RGBAColor {
         return CheckpointNative.getColour(checkpointId);

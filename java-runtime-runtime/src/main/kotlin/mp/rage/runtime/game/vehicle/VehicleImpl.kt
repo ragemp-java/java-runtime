@@ -23,9 +23,9 @@ class VehicleImpl(private val vehicleId: Int) : Vehicle {
         return vehicleId
     }
 
-    override fun create(model: Int, x: Float, y: Float, z: Float, heading: Float, numberPlate: String, alpha: Int, locked: Boolean, engine: Boolean, dimension: Int): Int {
-        return VehicleNative.create(model, x, y, z, heading, numberPlate, alpha, locked, engine, dimension)
-    }
+//    override fun create(model: Int, x: Float, y: Float, z: Float, heading: Float, numberPlate: String, alpha: Int, locked: Boolean, engine: Boolean, dimension: Int): Int {
+//        return VehicleNative.create(model, x, y, z, heading, numberPlate, alpha, locked, engine, dimension)
+//    }
 
     override fun isSirenActive(): Boolean {
         return VehicleNative.isSirenActive(vehicleId)

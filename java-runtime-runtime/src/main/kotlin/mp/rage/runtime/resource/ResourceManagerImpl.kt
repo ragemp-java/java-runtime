@@ -25,6 +25,7 @@ class ResourceManagerImpl : ResourceManager {
     private val log = LoggerFactory.getLogger(ResourceManagerImpl::class.java)
     private val resourceClassLoader = ResourceClassLoader()
     private val resources = HashMap<String, InternalResource>()
+    private val poolManager = PoolManager()
 
     fun loadResources() {
         Configuration.getRuntimeConfiguration().resources.forEach {
@@ -82,7 +83,13 @@ class ResourceManagerImpl : ResourceManager {
     internal fun createRuntimeInstance(resourceName: String, resourceConfiguration: ResourceConfiguration): RageJavaRuntime {
         val eventHandler = EventInstanceManager.createInstance(resourceName)
         val simpleCommandHandler = SimpleCommandHandler(eventHandler, resourceConfiguration)
-        return ResourceRuntime(eventHandler, simpleCommandHandler, this)
+        return ResourceRuntime(
+                eventHandler,
+                simpleCommandHandler,
+                this,
+                poolManager.playerPool,
+                poolManager.vehiclePool,
+                poolManager.checkpointPool)
     }
 
     internal fun readResourceConfiguration(file: File): ResourceConfiguration {
